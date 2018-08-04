@@ -32,6 +32,7 @@ Table of Contents
     * [hcandersenr](#hcandersenr)
     * [harrypotter](#harrypotter)
     * [subtools](#subtools)
+    * [rperseus](#rperseus)
   * [Wild data](#wild-data)
     * Cornell data
       * [polarity dataset v2.0](#polarity-dataset-v20)
@@ -188,6 +189,24 @@ Examples:
 - [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
 - [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
 - [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
+
+### rperseus
+
+The goal of rperseus is to furnish classicists, textual critics, and R enthusiasts with texts from the Classical World. While the English translations of most texts are available through `gutenbergr`, rperseus returns these works in their original language--Greek, Latin, and Hebrew.
+
+```{r warning=FALSE}
+#devtools::install_github("ropensci/rperseus")
+library(rperseus)
+aeneid_latin <- perseus_catalog %>% 
+  filter(group_name == "Virgil",
+         label == "Aeneid",
+         language == "lat") %>% 
+  pull(urn) %>% 
+  get_perseus_text()
+head(aeneid_latin)
+```
+
+See [the vignette for more examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
 
 
 ## Wild data
