@@ -1,0 +1,318 @@
+---
+output: 
+  github_document:
+    toc: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE
+)
+
+library(tidyverse)
+```
+
+# R-text-data
+
+The goal of this repository is to act as a collection of textural data set to be used for training and practice in text mining/NLP in R. This repository will not be a guide on how to do text analysis/mining but rather how to get a data set to get started with minimal hassle.
+
+Table of Contents
+=================
+  * [Main page](#R-text-data)
+  * [CRAN packages](#cran-packages)
+    * [janeaustenr](#janeaustenr)
+    * [gutenbergr](#gutenbergr)
+    * [text2vec](#text2vec)
+  * [Github packages](#github-packages)
+    * [sacred](#sacred)
+    * [hcandersenr](#hcandersenr)
+    * [harrypotter](#harrypotter)
+    * [subtools](#subtools)
+  * [Wild data](#wild-data)
+    * Cornell data
+      * [polarity dataset v2.0](#polarity-dataset-v20)
+      * [sentence polarity dataset v1.0](#sentence-polarity-dataset-v10)
+      * [scale dataset v1.0](#scale-dataset-v10)
+      * [subjectivity dataset v1.0](#subjectivity-dataset-v10)
+    * [SouthParkData](#southparkdata)
+    
+
+## CRAN packages
+
+### janeaustenr
+
+First we have the **janeaustenr** package popularized by Julia Silge in [tidytextmining](https://www.tidytextmining.com/).
+
+```{r}
+#install.packages("janeaustenr")
+library(janeaustenr)
+```
+
+`janeaustenr` includes 6 books; `emma`, `mansfieldpark`, `northangerabbey`, `persuasion`, `prideprejudice` and `sensesensibility` all formatted as a character vector with elements of about 70 characters.
+
+```{r}
+head(emma, n = 15)
+```
+
+All the books can also be found combined into one data.frame in the function `austen_books()`
+
+```{r}
+dplyr::glimpse(austen_books())
+```
+
+Examples:
+
+- https://juliasilge.com/blog/if-i-loved-nlp-less/
+
+### gutenbergr
+
+The **gutenbergr** package allows for search and download of public domain texts from [Project Gutenberg](https://www.gutenberg.org/). Currently includes more then 57,000 free eBooks.
+
+```{r}
+#install.packages("gutenbergr")
+library(gutenbergr)
+```
+
+To use **gutenbergr** you must know the Gutenberg id of the work you wish to analyze. A text search of the works can be done using the `gutenberg_works` function.
+
+```{r}
+gutenberg_works(title == "Wuthering Heights")
+```
+
+With that id you can use the `gutenberg_download()` function to  
+
+```{r}
+gutenberg_download(768)
+```
+
+Examples:
+
+Still pending.
+
+### text2vec
+
+While the **text2vec** package is data package by itself, it does include a textural data set inside.
+
+```{r}
+#install.packages("text2vec")
+library(text2vec)
+```
+
+The data frame `movie_review` contains 5000 IMDB movie reviews selected for sentiment analysis. It has been preprocessed to include sentiment that means that an IMDB rating < 5 results in a sentiment score of 0, and a rating >=7 has a sentiment score of 1.
+
+```{r}
+dplyr::glimpse(movie_review)
+```
+
+## Github packages
+
+### sacred
+
+The **sacred** package includes 9 tidy data sets: `apocrypha`, `book_of_mormon`, `doctrine_and_covenants`, `greek_new_testament`, `king_james_version`, `pearl_of_great_price`, `tanach`, `vulgate` and `septuagint` with column describing the position within each work.
+
+```{r}
+#devtools::install_github("JohnCoene/sacred")
+library(sacred)
+```
+
+```{r}
+dplyr::glimpse(apocrypha)
+```
+
+Examples:
+
+Still pending.
+
+### hcandersenr
+
+The **hcandersenr** package includes many of H.C. Andersen's fairy tales in 5 difference languages.
+
+```{r}
+#devtools::install_github("EmilHvitfeldt/hcandersenr")
+library(hcandersenr)
+```
+
+The fairy tales are found in the following data frames `hcandersen_en`, `hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr` for the English, Danish, German, Spanish and French versions respectively. Please be advised that all fairy tales aren't available in all languages in this package.
+
+```{r}
+dplyr::glimpse(hcandersen_en)
+```
+
+All the fairy tales are collected in the following data.frame:
+
+```{r}
+dplyr::glimpse(hca_fairytales)
+```
+
+Examples:
+
+Still pending.
+
+### harrypotter
+
+The **harrypotter** package includes the text from all 7 main series books.
+
+```{r}
+#devtools::install_github("bradleyboehmke/harrypotter")
+library(harrypotter)
+```
+
+the 7 books; `philosophers_stone`, `chamber_of_secrets`, `prisoner_of_azkaban`, `goblet_of_fire`, `order_of_the_phoenix`, `half_blood_prince` and `deathly_hallows` are formatted as character vectors with a chapter for each string.
+
+```{r}
+dplyr::glimpse(harrypotter::chamber_of_secrets)
+```
+
+Examples:
+
+- [Harry Plotter: Celebrating the 20 year anniversary with tidytext and the tidyverse in R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
+- [Harry Plotter: Part 2 – Hogwarts Houses and their Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
+
+### subtools
+
+The **subtools** package doesn't include any textural data, but allows you to read subtitle files. 
+
+```{r}
+#devtools::install_github("fkeck/subtools")
+library(subtools)
+```
+
+the use of this function can be found in the examples.  
+
+Examples:
+
+- [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
+- [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
+- [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
+
+
+## Wild data
+
+This sections includes public data sets and how to import them into R ready for analysis. It is generally advised to save the resulting data such that you don't re-download the data excessively.
+
+[Movie Review Data](http://www.cs.cornell.edu/people/pabo/movie-review-data/)  
+
+This website include a handful of different movie review data sets. Below is the code chuck necessary to load in the data sets.
+
+### polarity dataset v2.0
+
+```{r}
+library(tidyverse)
+library(fs)
+
+filepath <- file_temp() %>%
+  path_ext_set("tar.gz")
+
+download.file("http://www.cs.cornell.edu/people/pabo/movie-review-data/review_polarity.tar.gz", filepath)
+
+file_names <- untar(filepath, list = TRUE)
+file_names <- file_names[!str_detect(file_names, "README")]
+
+untar(filepath, files = file_names)
+
+data <- map_df(file_names, 
+               ~ tibble(text = read_lines(.x),
+                        polarity = str_detect(.x, "pos"),
+                        cv_tag = str_extract(.x, "(?<=cv)\\d{3}"),
+                        html_tag = str_extract(.x, "(?<=cv\\d{3}_)\\d*")))
+
+glimpse(data)
+```
+
+### sentence polarity dataset v1.0
+
+```{r}
+library(tidyverse)
+library(fs)
+
+filepath <- file_temp() %>%
+  path_ext_set("tar.gz")
+
+download.file("http://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.tar.gz", filepath)
+
+file_names <- untar(filepath, list = TRUE)
+file_names <- file_names[!str_detect(file_names, "README")]
+
+untar(filepath, files = file_names)
+
+data <- map_df(file_names, 
+               ~ tibble(text = read_lines(.x),
+                        polarity = str_detect(.x, "pos")))
+
+glimpse(data)
+```
+
+### scale dataset v1.0
+
+```{r}
+library(tidyverse)
+library(fs)
+
+filepath <- file_temp() %>%
+  path_ext_set("tar.gz")
+
+download.file("http://www.cs.cornell.edu/people/pabo/movie-review-data/scale_data.tar.gz", filepath)
+
+file_names <- untar(filepath, list = TRUE)
+file_names <- file_names[!str_detect(file_names, "README")]
+
+untar(filepath, files = file_names)
+
+subjs <- str_subset(file_names, "subj")
+ids <- str_subset(file_names, "id")
+ratings <- str_subset(file_names, "rating")
+names <- str_extract(ratings, "(?<=rating.).*") %>%
+  str_replace("\\+", " ")
+
+data <- map_df(seq_len(length(names)), 
+               ~ tibble(text = read_lines(subjs[.x]),
+                        id = read_lines(ids[.x]),
+                        rating = read_lines(ratings[.x]),
+                        name = names[.x]))
+
+glimpse(data)
+```
+
+### subjectivity dataset v1.0
+
+```{r}
+library(tidyverse)
+library(fs)
+
+filepath <- file_temp() %>%
+  path_ext_set("tar.gz")
+
+download.file("http://www.cs.cornell.edu/people/pabo/movie-review-data/rotten_imdb.tar.gz", filepath)
+
+file_names <- untar(filepath, list = TRUE)
+file_names <- file_names[!str_detect(file_names, "README")]
+
+untar(filepath, files = file_names)
+
+data <- map_df(file_names, 
+               ~ tibble(text = read_lines(.x),
+                        label = if_else(str_detect(.x, "quote"), 
+                                        "subjective", 
+                                        "objective")))
+
+glimpse(data)
+```
+
+### SouthParkData
+
+the following github repository [BobAdamsEE/SouthParkData](https://github.com/BobAdamsEE/SouthParkData) includes the script of the first 19 seasons of South Park. The following code snippet lets you download them all at once.
+
+```{r message=FALSE}
+url_base <- "https://raw.githubusercontent.com/BobAdamsEE/SouthParkData/master/by-season"
+urls <- paste0(url_base, "/Season-", 1:19, ".csv")
+
+data <- map_df(urls, ~ read_csv(.x))
+```
+
+Examples:
+
+- https://www.kaylinpavlik.com/text-mining-south-park/
