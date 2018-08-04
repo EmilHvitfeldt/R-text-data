@@ -3,7 +3,7 @@
 
 # R-text-data
 
-The goal of this repository is to act as a collection of textural data
+The goal of this repository is to act as a collection of textual data
 set to be used for training and practice in text mining/NLP in R. This
 repository will not be a guide on how to do text analysis/mining but
 rather how to get a data set to get started with minimal hassle.
@@ -133,7 +133,7 @@ Still pending.
 ### text2vec
 
 While the **text2vec** package is data package by itself, it does
-include a textural data set inside.
+include a textual data set inside.
 
 ``` r
 #install.packages("text2vec")
@@ -252,7 +252,7 @@ Examples:
 
 ### subtools
 
-The **subtools** package doesn’t include any textural data, but allows
+The **subtools** package doesn’t include any textual data, but allows
 you to read subtitle files.
 
 ``` r
