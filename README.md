@@ -13,6 +13,7 @@ rather how to get a data set to get started with minimal hassle.
   - [Main page](#R-text-data)
   - [CRAN packages](#cran-packages)
       - [janeaustenr](#janeaustenr)
+      - [proustr](#proustr)
       - [gutenbergr](#gutenbergr)
       - [text2vec](#text2vec)
       - [epubr](#epubr)
@@ -82,6 +83,40 @@ dplyr::glimpse(austen_books())
 Examples:
 
   - <https://juliasilge.com/blog/if-i-loved-nlp-less/>
+
+### proustr
+
+This **proustr** packages gives you access to tools designed to do
+Natural Language Processing in French.
+
+``` r
+#install.packages("proustr")
+library(proustr)
+```
+
+Furthermore it includes the following 7 books
+
+  - Du côté de chez Swann (1913): `ducotedechezswann`.
+  - À l’ombre des jeunes filles en fleurs (1919):
+    `alombredesjeunesfillesenfleurs`.
+  - Le Côté de Guermantes (1921): `lecotedeguermantes`.
+  - Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
+  - La Prisonnière (1923) :`laprisonniere`.
+  - Albertine disparue (1925, also know as : La Fugitive) :
+    `albertinedisparue`.
+  - Le Temps retrouvé (1927) : `letempretrouve`.
+
+Which are all found in the `proust_books()` function.
+
+``` r
+dplyr::glimpse(proust_books())
+#> Observations: 4,690
+#> Variables: 4
+#> $ text   <chr> "Longtemps, je me suis couché de bonne heure. Parfois, ...
+#> $ book   <chr> "Du côté de chez Swann", "Du côté de chez Swann", "Du c...
+#> $ volume <chr> "Première partie : Combray", "Première partie : Combray...
+#> $ year   <dbl> 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1...
+```
 
 ### gutenbergr
 
