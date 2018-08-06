@@ -2,4 +2,4 @@
 .Rhistory
 .RData
 .Ruserdata
-*_cache/
+README_cache/*

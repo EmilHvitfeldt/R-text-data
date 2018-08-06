@@ -27,13 +27,14 @@ Table of Contents
     * [janeaustenr](#janeaustenr)
     * [gutenbergr](#gutenbergr)
     * [text2vec](#text2vec)
+    * [epubr](#epubr)
   * [Github packages](#github-packages)
     * [sacred](#sacred)
     * [hcandersenr](#hcandersenr)
     * [harrypotter](#harrypotter)
     * [koanr](#koanr)
-    * [subtools](#subtools)
     * [rperseus](#rperseus)
+    * [subtools](#subtools)
   * [Wild data](#wild-data)
     * Cornell data
       * [polarity dataset v2.0](#polarity-dataset-v20)
@@ -109,6 +110,17 @@ The data frame `movie_review` contains 5000 IMDB movie reviews selected for sent
 ```{r}
 dplyr::glimpse(movie_review)
 ```
+
+### epubr
+
+The **epubr** package allows for extraction of metadata and textual content of epub files.
+
+```{r, eval=FALSE}
+install.packages("epubr")
+library(epubr)
+```
+
+Further information and examples can be found [here](https://github.com/ropensci/epubr).
 
 ## Github packages
 
@@ -189,23 +201,6 @@ The texts in this package include The Gateless Gate (`gateless_gate`), The Blue 
 dplyr::glimpse(gateless_gate)
 ```
 
-### subtools
-
-The **subtools** package doesn't include any textual data, but allows you to read subtitle files. 
-
-```{r}
-#devtools::install_github("fkeck/subtools")
-library(subtools)
-```
-
-the use of this function can be found in the examples.  
-
-Examples:
-
-- [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
-- [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
-- [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
-
 ### rperseus
 
 The goal of rperseus is to furnish classicists, textual critics, and R enthusiasts with texts from the Classical World. While the English translations of most texts are available through `gutenbergr`, rperseus returns these works in their original language--Greek, Latin, and Hebrew.
@@ -224,6 +219,22 @@ head(aeneid_latin)
 
 See [the vignette for more examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
 
+### subtools
+
+The **subtools** package doesn't include any textual data, but allows you to read subtitle files. 
+
+```{r}
+#devtools::install_github("fkeck/subtools")
+library(subtools)
+```
+
+the use of this function can be found in the examples.  
+
+Examples:
+
+- [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
+- [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
+- [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
 
 ## Wild data
 
