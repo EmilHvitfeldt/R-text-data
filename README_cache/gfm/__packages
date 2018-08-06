@@ -10,14 +10,11 @@ stringr
 forcats
 janeaustenr
 gutenbergr
-rplos
-WikipediR
-wikipediatrend
+bindrcpp
 text2vec
-keras
 sacred
 hcandersenr
 harrypotter
+koanr
 subtools
-bindrcpp
 fs
