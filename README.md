@@ -19,6 +19,7 @@ rather how to get a data set to get started with minimal hassle.
       - [sacred](#sacred)
       - [hcandersenr](#hcandersenr)
       - [harrypotter](#harrypotter)
+      - [koanr](#koanr)
       - [subtools](#subtools)
   - [Wild data](#wild-data)
       - Cornell data
@@ -249,6 +250,31 @@ Examples:
     R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
   - [Harry Plotter: Part 2 – Hogwarts Houses and their
     Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
+
+## koanr
+
+The **koanr** package includes text from several of the more important
+Zen koan texts.
+
+``` r
+#devtools::install_github("malcolmbarrett/koanr")
+library(koanr)
+```
+
+The texts in this package include The Gateless Gate (`gateless_gate`),
+The Blue Cliff Record (`blue_cliff_record`), The Record of the
+Transmission of the Light(`record_of_light`), and The Book of
+Equanimity(`book_of_equanimity`).
+
+``` r
+dplyr::glimpse(gateless_gate)
+#> Observations: 192
+#> Variables: 4
+#> $ collection <chr> "The Gateless Gate", "The Gateless Gate", "The Gate...
+#> $ case       <int> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, ...
+#> $ type       <chr> "title", "main_case", "commentary", "capping_verse"...
+#> $ text       <chr> "Joshu's Dog", "A monk asked Joshu, \"Has the dog t...
+```
 
 ### subtools
 

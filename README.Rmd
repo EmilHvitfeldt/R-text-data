@@ -31,6 +31,7 @@ Table of Contents
     * [sacred](#sacred)
     * [hcandersenr](#hcandersenr)
     * [harrypotter](#harrypotter)
+    * [koanr](#koanr)
     * [subtools](#subtools)
   * [Wild data](#wild-data)
     * Cornell data
@@ -171,6 +172,21 @@ Examples:
 
 - [Harry Plotter: Celebrating the 20 year anniversary with tidytext and the tidyverse in R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
 - [Harry Plotter: Part 2 – Hogwarts Houses and their Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
+
+## koanr
+
+The **koanr** package includes text from several of the more important Zen koan texts. 
+
+```{r message=FALSE}
+#devtools::install_github("malcolmbarrett/koanr")
+library(koanr)
+```
+
+The texts in this package include The Gateless Gate (`gateless_gate`), The Blue Cliff Record (`blue_cliff_record`), The Record of the Transmission of the Light(`record_of_light`), and The Book of Equanimity(`book_of_equanimity`).
+
+```{r}
+dplyr::glimpse(gateless_gate)
+```
 
 ### subtools
 
