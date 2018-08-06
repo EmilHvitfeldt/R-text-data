@@ -316,14 +316,14 @@ aeneid_latin <- perseus_catalog %>%
   get_perseus_text()
 head(aeneid_latin)
 #> # A tibble: 6 x 7
-#>   text                 urn   group_name label description language section
-#>   <chr>                <chr> <chr>      <chr> <chr>       <chr>      <int>
-#> 1 Arma virumque cano,… urn:… Virgil     Aene… "Perseus:b… lat            1
-#> 2 Conticuere omnes, i… urn:… Virgil     Aene… "Perseus:b… lat            2
-#> 3 Postquam res Asiae … urn:… Virgil     Aene… "Perseus:b… lat            3
-#> 4 At regina gravi iam… urn:… Virgil     Aene… "Perseus:b… lat            4
-#> 5 Interea medium Aene… urn:… Virgil     Aene… "Perseus:b… lat            5
-#> 6 Sic fatur lacrimans… urn:… Virgil     Aene… "Perseus:b… lat            6
+#>   text        urn       group_name label description      language section
+#>   <chr>       <chr>     <chr>      <chr> <chr>            <chr>      <int>
+#> 1 Arma virum… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            1
+#> 2 Conticuere… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            2
+#> 3 Postquam r… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            3
+#> 4 At regina … urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            4
+#> 5 Interea me… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            5
+#> 6 Sic fatur … urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            6
 ```
 
 See [the vignette for more
