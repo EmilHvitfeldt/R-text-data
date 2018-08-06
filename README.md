@@ -21,6 +21,7 @@ rather how to get a data set to get started with minimal hassle.
       - [harrypotter](#harrypotter)
       - [koanr](#koanr)
       - [subtools](#subtools)
+      - [rperseus](#rperseus)
   - [Wild data](#wild-data)
       - Cornell data
           - [polarity dataset v2.0](#polarity-dataset-v20)
@@ -296,6 +297,37 @@ Examples:
     Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
   - [You beautiful, naïve, sophisticated newborn
     series](https://masalmon.eu/2017/11/05/newborn-serie/)
+
+### rperseus
+
+The goal of rperseus is to furnish classicists, textual critics, and R
+enthusiasts with texts from the Classical World. While the English
+translations of most texts are available through `gutenbergr`, rperseus
+returns these works in their original language–Greek, Latin, and Hebrew.
+
+``` r
+#devtools::install_github("ropensci/rperseus")
+library(rperseus)
+aeneid_latin <- perseus_catalog %>% 
+  filter(group_name == "Virgil",
+         label == "Aeneid",
+         language == "lat") %>% 
+  pull(urn) %>% 
+  get_perseus_text()
+head(aeneid_latin)
+#> # A tibble: 6 x 7
+#>   text                 urn   group_name label description language section
+#>   <chr>                <chr> <chr>      <chr> <chr>       <chr>      <int>
+#> 1 Arma virumque cano,… urn:… Virgil     Aene… "Perseus:b… lat            1
+#> 2 Conticuere omnes, i… urn:… Virgil     Aene… "Perseus:b… lat            2
+#> 3 Postquam res Asiae … urn:… Virgil     Aene… "Perseus:b… lat            3
+#> 4 At regina gravi iam… urn:… Virgil     Aene… "Perseus:b… lat            4
+#> 5 Interea medium Aene… urn:… Virgil     Aene… "Perseus:b… lat            5
+#> 6 Sic fatur lacrimans… urn:… Virgil     Aene… "Perseus:b… lat            6
+```
+
+See [the vignette for more
+examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
 
 ## Wild data
 
