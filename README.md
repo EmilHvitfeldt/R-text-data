@@ -301,7 +301,7 @@ Examples:
   - [Harry Plotter: Part 2 – Hogwarts Houses and their
     Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
 
-## koanr
+### koanr
 
 The **koanr** package includes text from several of the more important
 Zen koan texts.
