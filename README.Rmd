@@ -30,6 +30,7 @@ Table of Contents
   * [Github packages](#github-packages)
     * [sacred](#sacred)
     * [quRan](#quran)
+    * [scriptuRs](#scripturs)
     * [hcandersenr](#hcandersenr)
     * [harrypotter](#harrypotter)
     * [koanr](#koanr)
@@ -168,7 +169,7 @@ Still pending.
 
 ## quRan
 
-The **quRan** contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
+The **quRan** package contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
 
 ```{r}
 #devtools::install_github("andrewheiss/quRan")
@@ -183,6 +184,22 @@ Examples:
 
 [Twitter thread](https://twitter.com/andrewheiss/status/1078428352577327104)
 
+## scriptuRs
+
+The **scriptuRs** package full text of the Standard Works for The Church of Jesus Christ of Latter-day Saints: the Old and New Testaments, the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price. Each volume is in a data frame with a row for each verse, along with 19 columns of detailed metadata.
+
+```{r}
+#devtools::install_github("andrewheiss/scriptuRs")
+library(scriptuRs)
+```
+
+```{r}
+dplyr::glimpse(scriptuRs::book_of_mormon)
+```
+
+Examples:
+
+Still pending.
 
 ### hcandersenr
 

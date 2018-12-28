@@ -18,6 +18,7 @@ Table of Contents
 -   [Github packages](#github-packages)
     -   [sacred](#sacred)
     -   [quRan](#quran)
+    -   [scriptuRs](#scripturs)
     -   [hcandersenr](#hcandersenr)
     -   [harrypotter](#harrypotter)
     -   [koanr](#koanr)
@@ -216,7 +217,7 @@ Still pending.
 quRan
 -----
 
-The **quRan** contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
+The **quRan** package contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
 
 ``` r
 #devtools::install_github("andrewheiss/quRan")
@@ -250,6 +251,50 @@ dplyr::glimpse(quran_ar)
 Examples:
 
 [Twitter thread](https://twitter.com/andrewheiss/status/1078428352577327104)
+
+scriptuRs
+---------
+
+The **scriptuRs** package full text of the Standard Works for The Church of Jesus Christ of Latter-day Saints: the Old and New Testaments, the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price. Each volume is in a data frame with a row for each verse, along with 19 columns of detailed metadata.
+
+``` r
+#devtools::install_github("andrewheiss/scriptuRs")
+library(scriptuRs)
+#> 
+#> Attaching package: 'scriptuRs'
+#> The following objects are masked from 'package:sacred':
+#> 
+#>     book_of_mormon, doctrine_and_covenants, pearl_of_great_price
+```
+
+``` r
+dplyr::glimpse(scriptuRs::book_of_mormon)
+#> Observations: 6,604
+#> Variables: 19
+#> $ volume_id          <dbl> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3...
+#> $ book_id            <dbl> 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67,...
+#> $ chapter_id         <dbl> 1190, 1190, 1190, 1190, 1190, 1190, 1190, 1...
+#> $ verse_id           <dbl> 31103, 31104, 31105, 31106, 31107, 31108, 3...
+#> $ volume_title       <chr> "Book of Mormon", "Book of Mormon", "Book o...
+#> $ book_title         <chr> "1 Nephi", "1 Nephi", "1 Nephi", "1 Nephi",...
+#> $ volume_long_title  <chr> "The Book of Mormon", "The Book of Mormon",...
+#> $ book_long_title    <chr> "The First Book of Nephi", "The First Book ...
+#> $ volume_subtitle    <chr> "Another Testament of Jesus Christ", "Anoth...
+#> $ book_subtitle      <chr> "His Reign and Ministry", "His Reign and Mi...
+#> $ volume_short_title <chr> "BoM", "BoM", "BoM", "BoM", "BoM", "BoM", "...
+#> $ book_short_title   <chr> "1 Ne.", "1 Ne.", "1 Ne.", "1 Ne.", "1 Ne."...
+#> $ volume_lds_url     <chr> "bm", "bm", "bm", "bm", "bm", "bm", "bm", "...
+#> $ book_lds_url       <chr> "1-ne", "1-ne", "1-ne", "1-ne", "1-ne", "1-...
+#> $ chapter_number     <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+#> $ verse_number       <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ...
+#> $ text               <chr> "I, Nephi, having been born of goodly paren...
+#> $ verse_title        <chr> "1 Nephi 1:1", "1 Nephi 1:2", "1 Nephi 1:3"...
+#> $ verse_short_title  <chr> "1 Ne. 1:1", "1 Ne. 1:2", "1 Ne. 1:3", "1 N...
+```
+
+Examples:
+
+Still pending.
 
 ### hcandersenr
 
