@@ -1,7 +1,5 @@
 ---
-output: 
-  github_document:
-    toc: true
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -16,7 +14,7 @@ knitr::opts_chunk$set(
 library(tidyverse)
 ```
 
-# R-text-data
+# R Text Data Compilation
 
 The goal of this repository is to act as a collection of textual data set to be used for training and practice in text mining/NLP in R. This repository will not be a guide on how to do text analysis/mining but rather how to get a data set to get started with minimal hassle.
 
@@ -31,6 +29,7 @@ Table of Contents
     * [epubr](#epubr)
   * [Github packages](#github-packages)
     * [sacred](#sacred)
+    * [quRan](#quran)
     * [hcandersenr](#hcandersenr)
     * [harrypotter](#harrypotter)
     * [koanr](#koanr)
@@ -166,6 +165,24 @@ dplyr::glimpse(apocrypha)
 Examples:
 
 Still pending.
+
+## quRan
+
+The **quRan** contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
+
+```{r}
+#devtools::install_github("andrewheiss/quRan")
+library(quRan)
+```
+
+```{r}
+dplyr::glimpse(quran_ar)
+```
+
+Examples:
+
+[Twitter thread](https://twitter.com/andrewheiss/status/1078428352577327104)
+
 
 ### hcandersenr
 

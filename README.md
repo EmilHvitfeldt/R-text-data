@@ -1,54 +1,49 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+R Text Data Compilation
+=======================
 
-# R-text-data
+The goal of this repository is to act as a collection of textual data set to be used for training and practice in text mining/NLP in R. This repository will not be a guide on how to do text analysis/mining but rather how to get a data set to get started with minimal hassle.
 
-The goal of this repository is to act as a collection of textual data
-set to be used for training and practice in text mining/NLP in R. This
-repository will not be a guide on how to do text analysis/mining but
-rather how to get a data set to get started with minimal hassle.
+Table of Contents
+=================
 
-# Table of Contents
+-   [Main page](#R-text-data)
+-   [CRAN packages](#cran-packages)
+    -   [janeaustenr](#janeaustenr)
+    -   [proustr](#proustr)
+    -   [gutenbergr](#gutenbergr)
+    -   [text2vec](#text2vec)
+    -   [epubr](#epubr)
+-   [Github packages](#github-packages)
+    -   [sacred](#sacred)
+    -   [quRan](#quran)
+    -   [hcandersenr](#hcandersenr)
+    -   [harrypotter](#harrypotter)
+    -   [koanr](#koanr)
+    -   [rperseus](#rperseus)
+    -   [subtools](#subtools)
+-   [Wild data](#wild-data)
+    -   Cornell data
+    -   [polarity dataset v2.0](#polarity-dataset-v20)
+    -   [sentence polarity dataset v1.0](#sentence-polarity-dataset-v10)
+    -   [scale dataset v1.0](#scale-dataset-v10)
+    -   [subjectivity dataset v1.0](#subjectivity-dataset-v10)
+    -   [SouthParkData](#southparkdata)
 
-  - [Main page](#R-text-data)
-  - [CRAN packages](#cran-packages)
-      - [janeaustenr](#janeaustenr)
-      - [proustr](#proustr)
-      - [gutenbergr](#gutenbergr)
-      - [text2vec](#text2vec)
-      - [epubr](#epubr)
-  - [Github packages](#github-packages)
-      - [sacred](#sacred)
-      - [hcandersenr](#hcandersenr)
-      - [harrypotter](#harrypotter)
-      - [koanr](#koanr)
-      - [rperseus](#rperseus)
-      - [subtools](#subtools)
-  - [Wild data](#wild-data)
-      - Cornell data
-          - [polarity dataset v2.0](#polarity-dataset-v20)
-          - [sentence polarity dataset
-            v1.0](#sentence-polarity-dataset-v10)
-          - [scale dataset v1.0](#scale-dataset-v10)
-          - [subjectivity dataset v1.0](#subjectivity-dataset-v10)
-      - [SouthParkData](#southparkdata)
-
-## CRAN packages
+CRAN packages
+-------------
 
 ### janeaustenr
 
-First we have the **janeaustenr** package popularized by Julia Silge in
-[tidytextmining](https://www.tidytextmining.com/).
+First we have the **janeaustenr** package popularized by Julia Silge in [tidytextmining](https://www.tidytextmining.com/).
 
 ``` r
 #install.packages("janeaustenr")
 library(janeaustenr)
 ```
 
-`janeaustenr` includes 6 books; `emma`, `mansfieldpark`,
-`northangerabbey`, `persuasion`, `prideprejudice` and `sensesensibility`
-all formatted as a character vector with elements of about 70
-characters.
+`janeaustenr` includes 6 books; `emma`, `mansfieldpark`, `northangerabbey`, `persuasion`, `prideprejudice` and `sensesensibility` all formatted as a character vector with elements of about 70 characters.
 
 ``` r
 head(emma, n = 15)
@@ -69,8 +64,7 @@ head(emma, n = 15)
 #> [15] "Emma Woodhouse, handsome, clever, and rich, with a comfortable home"
 ```
 
-All the books can also be found combined into one data.frame in the
-function `austen_books()`
+All the books can also be found combined into one data.frame in the function `austen_books()`
 
 ``` r
 dplyr::glimpse(austen_books())
@@ -82,12 +76,11 @@ dplyr::glimpse(austen_books())
 
 Examples:
 
-  - <https://juliasilge.com/blog/if-i-loved-nlp-less/>
+-   <https://juliasilge.com/blog/if-i-loved-nlp-less/>
 
 ### proustr
 
-This **proustr** packages gives you access to tools designed to do
-Natural Language Processing in French.
+This **proustr** packages gives you access to tools designed to do Natural Language Processing in French.
 
 ``` r
 #install.packages("proustr")
@@ -96,15 +89,13 @@ library(proustr)
 
 Furthermore it includes the following 7 books
 
-  - Du côté de chez Swann (1913): `ducotedechezswann`.
-  - À l’ombre des jeunes filles en fleurs (1919):
-    `alombredesjeunesfillesenfleurs`.
-  - Le Côté de Guermantes (1921): `lecotedeguermantes`.
-  - Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
-  - La Prisonnière (1923) :`laprisonniere`.
-  - Albertine disparue (1925, also know as : La Fugitive) :
-    `albertinedisparue`.
-  - Le Temps retrouvé (1927) : `letempretrouve`.
+-   Du côté de chez Swann (1913): `ducotedechezswann`.
+-   À l'ombre des jeunes filles en fleurs (1919): `alombredesjeunesfillesenfleurs`.
+-   Le Côté de Guermantes (1921): `lecotedeguermantes`.
+-   Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
+-   La Prisonnière (1923) :`laprisonniere`.
+-   Albertine disparue (1925, also know as : La Fugitive) : `albertinedisparue`.
+-   Le Temps retrouvé (1927) : `letempretrouve`.
 
 Which are all found in the `proust_books()` function.
 
@@ -120,18 +111,14 @@ dplyr::glimpse(proust_books())
 
 ### gutenbergr
 
-The **gutenbergr** package allows for search and download of public
-domain texts from [Project Gutenberg](https://www.gutenberg.org/).
-Currently includes more then 57,000 free eBooks.
+The **gutenbergr** package allows for search and download of public domain texts from [Project Gutenberg](https://www.gutenberg.org/). Currently includes more then 57,000 free eBooks.
 
 ``` r
 #install.packages("gutenbergr")
 library(gutenbergr)
 ```
 
-To use **gutenbergr** you must know the Gutenberg id of the work you
-wish to analyze. A text search of the works can be done using the
-`gutenberg_works` function.
+To use **gutenbergr** you must know the Gutenberg id of the work you wish to analyze. A text search of the works can be done using the `gutenberg_works` function.
 
 ``` r
 gutenberg_works(title == "Wuthering Heights")
@@ -149,18 +136,18 @@ gutenberg_download(768)
 #> Determining mirror for Project Gutenberg from http://www.gutenberg.org/robot/harvest
 #> Using mirror http://aleph.gutenberg.org
 #> # A tibble: 12,085 x 2
-#>    gutenberg_id text                                                      
-#>           <int> <chr>                                                     
-#>  1          768 WUTHERING HEIGHTS                                         
-#>  2          768 ""                                                        
-#>  3          768 ""                                                        
-#>  4          768 CHAPTER I                                                 
-#>  5          768 ""                                                        
-#>  6          768 ""                                                        
-#>  7          768 1801.--I have just returned from a visit to my landlord--…
-#>  8          768 neighbour that I shall be troubled with.  This is certain…
-#>  9          768 country!  In all England, I do not believe that I could h…
-#> 10          768 situation so completely removed from the stir of society.…
+#>    gutenberg_id text                                                       
+#>           <int> <chr>                                                      
+#>  1          768 WUTHERING HEIGHTS                                          
+#>  2          768 ""                                                         
+#>  3          768 ""                                                         
+#>  4          768 CHAPTER I                                                  
+#>  5          768 ""                                                         
+#>  6          768 ""                                                         
+#>  7          768 1801.--I have just returned from a visit to my landlord--t…
+#>  8          768 neighbour that I shall be troubled with.  This is certainl…
+#>  9          768 country!  In all England, I do not believe that I could ha…
+#> 10          768 situation so completely removed from the stir of society. …
 #> # ... with 12,075 more rows
 ```
 
@@ -170,18 +157,14 @@ Still pending.
 
 ### text2vec
 
-While the **text2vec** package is data package by itself, it does
-include a textual data set inside.
+While the **text2vec** package is data package by itself, it does include a textual data set inside.
 
 ``` r
 #install.packages("text2vec")
 library(text2vec)
 ```
 
-The data frame `movie_review` contains 5000 IMDB movie reviews selected
-for sentiment analysis. It has been preprocessed to include sentiment
-that means that an IMDB rating \< 5 results in a sentiment score of 0,
-and a rating \>=7 has a sentiment score of 1.
+The data frame `movie_review` contains 5000 IMDB movie reviews selected for sentiment analysis. It has been preprocessed to include sentiment that means that an IMDB rating &lt; 5 results in a sentiment score of 0, and a rating &gt;=7 has a sentiment score of 1.
 
 ``` r
 dplyr::glimpse(movie_review)
@@ -194,25 +177,21 @@ dplyr::glimpse(movie_review)
 
 ### epubr
 
-The **epubr** package allows for extraction of metadata and textual
-content of epub files.
+The **epubr** package allows for extraction of metadata and textual content of epub files.
 
 ``` r
 install.packages("epubr")
 library(epubr)
 ```
 
-Further information and examples can be found
-[here](https://github.com/ropensci/epubr).
+Further information and examples can be found [here](https://github.com/ropensci/epubr).
 
-## Github packages
+Github packages
+---------------
 
 ### sacred
 
-The **sacred** package includes 9 tidy data sets: `apocrypha`,
-`book_of_mormon`, `doctrine_and_covenants`, `greek_new_testament`,
-`king_james_version`, `pearl_of_great_price`, `tanach`, `vulgate` and
-`septuagint` with column describing the position within each work.
+The **sacred** package includes 9 tidy data sets: `apocrypha`, `book_of_mormon`, `doctrine_and_covenants`, `greek_new_testament`, `king_james_version`, `pearl_of_great_price`, `tanach`, `vulgate` and `septuagint` with column describing the position within each work.
 
 ``` r
 #devtools::install_github("JohnCoene/sacred")
@@ -234,21 +213,54 @@ Examples:
 
 Still pending.
 
+quRan
+-----
+
+The **quRan** contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
+
+``` r
+#devtools::install_github("andrewheiss/quRan")
+library(quRan)
+```
+
+``` r
+dplyr::glimpse(quran_ar)
+#> Observations: 6,236
+#> Variables: 18
+#> $ surah_id             <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,...
+#> $ ayah_id              <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13...
+#> $ surah_title_ar       <fct> الفاتحة, الفاتحة, الفاتحة, الفاتحة, الفات...
+#> $ surah_title_en       <fct> Al-Faatiha, Al-Faatiha, Al-Faatiha, Al-Fa...
+#> $ surah_title_en_trans <fct> The Opening, The Opening, The Opening, Th...
+#> $ revelation_type      <chr> "Meccan", "Meccan", "Meccan", "Meccan", "...
+#> $ text                 <chr> "﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"...
+#> $ surah                <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,...
+#> $ ayah                 <int> 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7,...
+#> $ ayah_title           <chr> "1:1", "1:2", "1:3", "1:4", "1:5", "1:6",...
+#> $ juz                  <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+#> $ manzil               <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+#> $ page                 <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3,...
+#> $ hizb_quarter         <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+#> $ sajda                <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,...
+#> $ sajda_id             <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N...
+#> $ sajda_recommended    <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N...
+#> $ sajda_obligatory     <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N...
+```
+
+Examples:
+
+[Twitter thread](https://twitter.com/andrewheiss/status/1078428352577327104)
+
 ### hcandersenr
 
-The **hcandersenr** package includes many of H.C. Andersen’s fairy tales
-in 5 difference languages.
+The **hcandersenr** package includes many of H.C. Andersen's fairy tales in 5 difference languages.
 
 ``` r
 #devtools::install_github("EmilHvitfeldt/hcandersenr")
 library(hcandersenr)
 ```
 
-The fairy tales are found in the following data frames `hcandersen_en`,
-`hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr`
-for the English, Danish, German, Spanish and French versions
-respectively. Please be advised that all fairy tales aren’t available in
-all languages in this package.
+The fairy tales are found in the following data frames `hcandersen_en`, `hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr` for the English, Danish, German, Spanish and French versions respectively. Please be advised that all fairy tales aren't available in all languages in this package.
 
 ``` r
 dplyr::glimpse(hcandersen_en)
@@ -275,18 +287,14 @@ Still pending.
 
 ### harrypotter
 
-The **harrypotter** package includes the text from all 7 main series
-books.
+The **harrypotter** package includes the text from all 7 main series books.
 
 ``` r
 #devtools::install_github("bradleyboehmke/harrypotter")
 library(harrypotter)
 ```
 
-the 7 books; `philosophers_stone`, `chamber_of_secrets`,
-`prisoner_of_azkaban`, `goblet_of_fire`, `order_of_the_phoenix`,
-`half_blood_prince` and `deathly_hallows` are formatted as character
-vectors with a chapter for each string.
+the 7 books; `philosophers_stone`, `chamber_of_secrets`, `prisoner_of_azkaban`, `goblet_of_fire`, `order_of_the_phoenix`, `half_blood_prince` and `deathly_hallows` are formatted as character vectors with a chapter for each string.
 
 ``` r
 dplyr::glimpse(harrypotter::chamber_of_secrets)
@@ -295,26 +303,19 @@ dplyr::glimpse(harrypotter::chamber_of_secrets)
 
 Examples:
 
-  - [Harry Plotter: Celebrating the 20 year anniversary with tidytext
-    and the tidyverse in
-    R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
-  - [Harry Plotter: Part 2 – Hogwarts Houses and their
-    Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
+-   [Harry Plotter: Celebrating the 20 year anniversary with tidytext and the tidyverse in R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
+-   [Harry Plotter: Part 2 – Hogwarts Houses and their Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
 
 ### koanr
 
-The **koanr** package includes text from several of the more important
-Zen koan texts.
+The **koanr** package includes text from several of the more important Zen koan texts.
 
 ``` r
 #devtools::install_github("malcolmbarrett/koanr")
 library(koanr)
 ```
 
-The texts in this package include The Gateless Gate (`gateless_gate`),
-The Blue Cliff Record (`blue_cliff_record`), The Record of the
-Transmission of the Light(`record_of_light`), and The Book of
-Equanimity(`book_of_equanimity`).
+The texts in this package include The Gateless Gate (`gateless_gate`), The Blue Cliff Record (`blue_cliff_record`), The Record of the Transmission of the Light(`record_of_light`), and The Book of Equanimity(`book_of_equanimity`).
 
 ``` r
 dplyr::glimpse(gateless_gate)
@@ -328,10 +329,7 @@ dplyr::glimpse(gateless_gate)
 
 ### rperseus
 
-The goal of rperseus is to furnish classicists, textual critics, and R
-enthusiasts with texts from the Classical World. While the English
-translations of most texts are available through `gutenbergr`, rperseus
-returns these works in their original language–Greek, Latin, and Hebrew.
+The goal of rperseus is to furnish classicists, textual critics, and R enthusiasts with texts from the Classical World. While the English translations of most texts are available through `gutenbergr`, rperseus returns these works in their original language--Greek, Latin, and Hebrew.
 
 ``` r
 #devtools::install_github("ropensci/rperseus")
@@ -344,23 +342,21 @@ aeneid_latin <- perseus_catalog %>%
   get_perseus_text()
 head(aeneid_latin)
 #> # A tibble: 6 x 7
-#>   text        urn       group_name label description      language section
-#>   <chr>       <chr>     <chr>      <chr> <chr>            <chr>      <int>
-#> 1 Arma virum… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            1
-#> 2 Conticuere… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            2
-#> 3 Postquam r… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            3
-#> 4 At regina … urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            4
-#> 5 Interea me… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            5
-#> 6 Sic fatur … urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            6
+#>   text         urn       group_name label description      language section
+#>   <chr>        <chr>     <chr>      <chr> <chr>            <chr>      <int>
+#> 1 Arma virumq… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            1
+#> 2 Conticuere … urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            2
+#> 3 Postquam re… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            3
+#> 4 At regina g… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            4
+#> 5 Interea med… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            5
+#> 6 Sic fatur l… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            6
 ```
 
-See [the vignette for more
-examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
+See [the vignette for more examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
 
 ### subtools
 
-The **subtools** package doesn’t include any textual data, but allows
-you to read subtitle files.
+The **subtools** package doesn't include any textual data, but allows you to read subtitle files.
 
 ``` r
 #devtools::install_github("fkeck/subtools")
@@ -371,24 +367,18 @@ the use of this function can be found in the examples.
 
 Examples:
 
-  - [Movies and series subtitles in R with
-    subtools](http://www.pieceofk.fr/?p=437)
-  - [A tidy text analysis of Rick and
-    Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
-  - [You beautiful, naïve, sophisticated newborn
-    series](https://masalmon.eu/2017/11/05/newborn-serie/)
+-   [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
+-   [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
+-   [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
 
-## Wild data
+Wild data
+---------
 
-This sections includes public data sets and how to import them into R
-ready for analysis. It is generally advised to save the resulting data
-such that you don’t re-download the data excessively.
+This sections includes public data sets and how to import them into R ready for analysis. It is generally advised to save the resulting data such that you don't re-download the data excessively.
 
-[Movie Review
-Data](http://www.cs.cornell.edu/people/pabo/movie-review-data/)
+[Movie Review Data](http://www.cs.cornell.edu/people/pabo/movie-review-data/)
 
-This website include a handful of different movie review data sets.
-Below is the code chuck necessary to load in the data sets.
+This website include a handful of different movie review data sets. Below is the code chuck necessary to load in the data sets.
 
 ### polarity dataset v2.0
 
@@ -516,11 +506,7 @@ glimpse(data)
 
 ### SouthParkData
 
-the following github repository
-[BobAdamsEE/SouthParkData](https://github.com/BobAdamsEE/SouthParkData)
-includes the script of the first 19 seasons of South Park. The following
-code snippet lets you download them all at
-once.
+the following github repository [BobAdamsEE/SouthParkData](https://github.com/BobAdamsEE/SouthParkData) includes the script of the first 19 seasons of South Park. The following code snippet lets you download them all at once.
 
 ``` r
 url_base <- "https://raw.githubusercontent.com/BobAdamsEE/SouthParkData/master/by-season"
@@ -531,4 +517,4 @@ data <- map_df(urls, ~ read_csv(.x))
 
 Examples:
 
-  - <https://www.kaylinpavlik.com/text-mining-south-park/>
+-   <https://www.kaylinpavlik.com/text-mining-south-park/>
