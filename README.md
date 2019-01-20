@@ -13,15 +13,15 @@ rather how to get a data set to get started with minimal hassle.
   - [Main page](#R-text-data)
   - [CRAN packages](#cran-packages)
       - [janeaustenr](#janeaustenr)
+      - [quRan](#quran)
+      - [scriptuRs](#scripturs)
+      - [hcandersenr](#hcandersenr)
       - [proustr](#proustr)
       - [gutenbergr](#gutenbergr)
       - [text2vec](#text2vec)
       - [epubr](#epubr)
   - [Github packages](#github-packages)
       - [sacred](#sacred)
-      - [quRan](#quran)
-      - [scriptuRs](#scripturs)
-      - [hcandersenr](#hcandersenr)
       - [harrypotter](#harrypotter)
       - [koanr](#koanr)
       - [rperseus](#rperseus)
@@ -85,6 +85,128 @@ dplyr::glimpse(austen_books())
 Examples:
 
   - <https://juliasilge.com/blog/if-i-loved-nlp-less/>
+
+## quRan
+
+The **quRan** package contains the complete text of the Qur’an in Arabic
+(with and without vowels) and in English (the Yusuf Ali and Saheeh
+International translations).
+
+``` r
+#install.packages("quRan")
+library(quRan)
+```
+
+``` r
+dplyr::glimpse(quran_ar)
+#> Observations: 6,236
+#> Variables: 18
+#> $ surah_id             <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2…
+#> $ ayah_id              <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, …
+#> $ surah_title_ar       <fct> الفاتحة, الفاتحة, الفاتحة, الفاتحة, الفاتحة…
+#> $ surah_title_en       <fct> Al-Faatiha, Al-Faatiha, Al-Faatiha, Al-Faat…
+#> $ surah_title_en_trans <fct> The Opening, The Opening, The Opening, The …
+#> $ revelation_type      <chr> "Meccan", "Meccan", "Meccan", "Meccan", "Me…
+#> $ text                 <chr> "﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", …
+#> $ surah                <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2…
+#> $ ayah                 <int> 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 8…
+#> $ ayah_title           <chr> "1:1", "1:2", "1:3", "1:4", "1:5", "1:6", "…
+#> $ juz                  <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+#> $ manzil               <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+#> $ page                 <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3…
+#> $ hizb_quarter         <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+#> $ sajda                <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
+#> $ sajda_id             <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+#> $ sajda_recommended    <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+#> $ sajda_obligatory     <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+```
+
+Examples:
+
+[Twitter
+thread](https://twitter.com/andrewheiss/status/1078428352577327104)
+
+## scriptuRs
+
+The **scriptuRs** package full text of the Standard Works for The Church
+of Jesus Christ of Latter-day Saints: the Old and New Testaments, the
+Book of Mormon, the Doctrine and Covenants, and the Pearl of Great
+Price. Each volume is in a data frame with a row for each verse, along
+with 19 columns of detailed metadata.
+
+``` r
+#install.packages("scriptuRs")
+library(scriptuRs)
+```
+
+``` r
+dplyr::glimpse(scriptuRs::book_of_mormon)
+#> Observations: 6,604
+#> Variables: 19
+#> $ volume_id          <dbl> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, …
+#> $ book_id            <dbl> 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 6…
+#> $ chapter_id         <dbl> 1190, 1190, 1190, 1190, 1190, 1190, 1190, 119…
+#> $ verse_id           <dbl> 31103, 31104, 31105, 31106, 31107, 31108, 311…
+#> $ volume_title       <chr> "Book of Mormon", "Book of Mormon", "Book of …
+#> $ book_title         <chr> "1 Nephi", "1 Nephi", "1 Nephi", "1 Nephi", "…
+#> $ volume_long_title  <chr> "The Book of Mormon", "The Book of Mormon", "…
+#> $ book_long_title    <chr> "The First Book of Nephi", "The First Book of…
+#> $ volume_subtitle    <chr> "Another Testament of Jesus Christ", "Another…
+#> $ book_subtitle      <chr> "His Reign and Ministry", "His Reign and Mini…
+#> $ volume_short_title <chr> "BoM", "BoM", "BoM", "BoM", "BoM", "BoM", "Bo…
+#> $ book_short_title   <chr> "1 Ne.", "1 Ne.", "1 Ne.", "1 Ne.", "1 Ne.", …
+#> $ volume_lds_url     <chr> "bm", "bm", "bm", "bm", "bm", "bm", "bm", "bm…
+#> $ book_lds_url       <chr> "1-ne", "1-ne", "1-ne", "1-ne", "1-ne", "1-ne…
+#> $ chapter_number     <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+#> $ verse_number       <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14…
+#> $ text               <chr> "I, Nephi, having been born of goodly parents…
+#> $ verse_title        <chr> "1 Nephi 1:1", "1 Nephi 1:2", "1 Nephi 1:3", …
+#> $ verse_short_title  <chr> "1 Ne. 1:1", "1 Ne. 1:2", "1 Ne. 1:3", "1 Ne.…
+```
+
+Examples:
+
+  - [Tidy text, parts of speech, and unique words in the
+    Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
+
+### hcandersenr
+
+The **hcandersenr** package includes many of H.C. Andersen’s fairy tales
+in 5 difference languages.
+
+``` r
+#install.packages("hcandersenr")
+library(hcandersenr)
+```
+
+The fairy tales are found in the following data frames `hcandersen_en`,
+`hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr`
+for the English, Danish, German, Spanish and French versions
+respectively. Please be advised that all fairy tales aren’t available in
+all languages in this package.
+
+``` r
+dplyr::glimpse(hcandersen_en)
+#> Observations: 31,380
+#> Variables: 2
+#> $ text <chr> "A soldier came marching along the high road: \"Left, right…
+#> $ book <chr> "The tinder-box", "The tinder-box", "The tinder-box", "The …
+```
+
+All the fairy tales are collected in the following data.frame:
+
+``` r
+dplyr::glimpse(hca_fairytales())
+#> Observations: 126,102
+#> Variables: 3
+#> $ text     <chr> "Der kom en soldat marcherende hen ad landevejen: én, t…
+#> $ book     <chr> "The tinder-box", "The tinder-box", "The tinder-box", "…
+#> $ language <chr> "Danish", "Danish", "Danish", "Danish", "Danish", "Dani…
+```
+
+Examples:
+
+Still pending.
 
 ### proustr
 
@@ -230,131 +352,6 @@ dplyr::glimpse(apocrypha)
 #> $ psalm    <chr> "11", "11", "11", "11", "11", "11", "11", "11", "11", "…
 #> $ verse    <chr> "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"…
 #> $ text     <chr> "And Josias held the feast of the passover in Jerusalem…
-```
-
-Examples:
-
-Still pending.
-
-## quRan
-
-The **quRan** package contains the complete text of the Qur’an in Arabic
-(with and without vowels) and in English (the Yusuf Ali and Saheeh
-International translations).
-
-``` r
-#devtools::install_github("andrewheiss/quRan")
-library(quRan)
-```
-
-``` r
-dplyr::glimpse(quran_ar)
-#> Observations: 6,236
-#> Variables: 18
-#> $ surah_id             <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2…
-#> $ ayah_id              <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, …
-#> $ surah_title_ar       <fct> الفاتحة, الفاتحة, الفاتحة, الفاتحة, الفاتحة…
-#> $ surah_title_en       <fct> Al-Faatiha, Al-Faatiha, Al-Faatiha, Al-Faat…
-#> $ surah_title_en_trans <fct> The Opening, The Opening, The Opening, The …
-#> $ revelation_type      <chr> "Meccan", "Meccan", "Meccan", "Meccan", "Me…
-#> $ text                 <chr> "﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", …
-#> $ surah                <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2…
-#> $ ayah                 <int> 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 8…
-#> $ ayah_title           <chr> "1:1", "1:2", "1:3", "1:4", "1:5", "1:6", "…
-#> $ juz                  <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
-#> $ manzil               <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
-#> $ page                 <int> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3…
-#> $ hizb_quarter         <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
-#> $ sajda                <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
-#> $ sajda_id             <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-#> $ sajda_recommended    <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-#> $ sajda_obligatory     <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-```
-
-Examples:
-
-[Twitter
-thread](https://twitter.com/andrewheiss/status/1078428352577327104)
-
-## scriptuRs
-
-The **scriptuRs** package full text of the Standard Works for The Church
-of Jesus Christ of Latter-day Saints: the Old and New Testaments, the
-Book of Mormon, the Doctrine and Covenants, and the Pearl of Great
-Price. Each volume is in a data frame with a row for each verse, along
-with 19 columns of detailed metadata.
-
-``` r
-#devtools::install_github("andrewheiss/scriptuRs")
-library(scriptuRs)
-#> 
-#> Attaching package: 'scriptuRs'
-#> The following objects are masked from 'package:sacred':
-#> 
-#>     book_of_mormon, doctrine_and_covenants, pearl_of_great_price
-```
-
-``` r
-dplyr::glimpse(scriptuRs::book_of_mormon)
-#> Observations: 6,604
-#> Variables: 19
-#> $ volume_id          <dbl> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, …
-#> $ book_id            <dbl> 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 6…
-#> $ chapter_id         <dbl> 1190, 1190, 1190, 1190, 1190, 1190, 1190, 119…
-#> $ verse_id           <dbl> 31103, 31104, 31105, 31106, 31107, 31108, 311…
-#> $ volume_title       <chr> "Book of Mormon", "Book of Mormon", "Book of …
-#> $ book_title         <chr> "1 Nephi", "1 Nephi", "1 Nephi", "1 Nephi", "…
-#> $ volume_long_title  <chr> "The Book of Mormon", "The Book of Mormon", "…
-#> $ book_long_title    <chr> "The First Book of Nephi", "The First Book of…
-#> $ volume_subtitle    <chr> "Another Testament of Jesus Christ", "Another…
-#> $ book_subtitle      <chr> "His Reign and Ministry", "His Reign and Mini…
-#> $ volume_short_title <chr> "BoM", "BoM", "BoM", "BoM", "BoM", "BoM", "Bo…
-#> $ book_short_title   <chr> "1 Ne.", "1 Ne.", "1 Ne.", "1 Ne.", "1 Ne.", …
-#> $ volume_lds_url     <chr> "bm", "bm", "bm", "bm", "bm", "bm", "bm", "bm…
-#> $ book_lds_url       <chr> "1-ne", "1-ne", "1-ne", "1-ne", "1-ne", "1-ne…
-#> $ chapter_number     <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
-#> $ verse_number       <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14…
-#> $ text               <chr> "I, Nephi, having been born of goodly parents…
-#> $ verse_title        <chr> "1 Nephi 1:1", "1 Nephi 1:2", "1 Nephi 1:3", …
-#> $ verse_short_title  <chr> "1 Ne. 1:1", "1 Ne. 1:2", "1 Ne. 1:3", "1 Ne.…
-```
-
-Examples:
-
-  - [Tidy text, parts of speech, and unique words in the
-    Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
-
-### hcandersenr
-
-The **hcandersenr** package includes many of H.C. Andersen’s fairy tales
-in 5 difference languages.
-
-``` r
-#devtools::install_github("EmilHvitfeldt/hcandersenr")
-library(hcandersenr)
-```
-
-The fairy tales are found in the following data frames `hcandersen_en`,
-`hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr`
-for the English, Danish, German, Spanish and French versions
-respectively. Please be advised that all fairy tales aren’t available in
-all languages in this package.
-
-``` r
-dplyr::glimpse(hcandersen_en)
-#> Observations: 31,380
-#> Variables: 2
-#> $ text <chr> "A soldier came marching along the high road: \"Left, right…
-#> $ book <chr> "The tinder-box", "The tinder-box", "The tinder-box", "The …
-```
-
-All the fairy tales are collected in the following data.frame:
-
-``` r
-dplyr::glimpse(hca_fairytales)
-#> function ()  
-#>  - attr(*, "srcref")= 'srcref' int [1:8] 19 19 53 1 19 1 104 138
-#>   ..- attr(*, "srcfile")=Classes 'srcfilealias', 'srcfile' <environment: 0x7fac2e9df6c8>
 ```
 
 Examples:

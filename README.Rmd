@@ -23,15 +23,15 @@ Table of Contents
   * [Main page](#R-text-data)
   * [CRAN packages](#cran-packages)
     * [janeaustenr](#janeaustenr)
+    * [quRan](#quran)
+    * [scriptuRs](#scripturs)
+    * [hcandersenr](#hcandersenr)
     * [proustr](#proustr)
     * [gutenbergr](#gutenbergr)
     * [text2vec](#text2vec)
     * [epubr](#epubr)
   * [Github packages](#github-packages)
     * [sacred](#sacred)
-    * [quRan](#quran)
-    * [scriptuRs](#scripturs)
-    * [hcandersenr](#hcandersenr)
     * [harrypotter](#harrypotter)
     * [koanr](#koanr)
     * [rperseus](#rperseus)
@@ -71,6 +71,65 @@ dplyr::glimpse(austen_books())
 Examples:
 
 - https://juliasilge.com/blog/if-i-loved-nlp-less/
+
+## quRan
+
+The **quRan** package contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
+
+```{r}
+#install.packages("quRan")
+library(quRan)
+```
+
+```{r}
+dplyr::glimpse(quran_ar)
+```
+
+Examples:
+
+[Twitter thread](https://twitter.com/andrewheiss/status/1078428352577327104)
+
+## scriptuRs
+
+The **scriptuRs** package full text of the Standard Works for The Church of Jesus Christ of Latter-day Saints: the Old and New Testaments, the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price. Each volume is in a data frame with a row for each verse, along with 19 columns of detailed metadata.
+
+```{r}
+#install.packages("scriptuRs")
+library(scriptuRs)
+```
+
+```{r}
+dplyr::glimpse(scriptuRs::book_of_mormon)
+```
+
+Examples:
+
+- [Tidy text, parts of speech, and unique words in the Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
+
+### hcandersenr
+
+The **hcandersenr** package includes many of H.C. Andersen's fairy tales in 5 difference languages.
+
+```{r}
+#install.packages("hcandersenr")
+library(hcandersenr)
+```
+
+The fairy tales are found in the following data frames `hcandersen_en`, `hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr` for the English, Danish, German, Spanish and French versions respectively. Please be advised that all fairy tales aren't available in all languages in this package.
+
+```{r}
+dplyr::glimpse(hcandersen_en)
+```
+
+All the fairy tales are collected in the following data.frame:
+
+```{r}
+dplyr::glimpse(hca_fairytales())
+```
+
+Examples:
+
+Still pending.
 
 ### proustr
 
@@ -161,65 +220,6 @@ library(sacred)
 
 ```{r}
 dplyr::glimpse(apocrypha)
-```
-
-Examples:
-
-Still pending.
-
-## quRan
-
-The **quRan** package contains the complete text of the Qur'an in Arabic (with and without vowels) and in English (the Yusuf Ali and Saheeh International translations).
-
-```{r}
-#devtools::install_github("andrewheiss/quRan")
-library(quRan)
-```
-
-```{r}
-dplyr::glimpse(quran_ar)
-```
-
-Examples:
-
-[Twitter thread](https://twitter.com/andrewheiss/status/1078428352577327104)
-
-## scriptuRs
-
-The **scriptuRs** package full text of the Standard Works for The Church of Jesus Christ of Latter-day Saints: the Old and New Testaments, the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price. Each volume is in a data frame with a row for each verse, along with 19 columns of detailed metadata.
-
-```{r}
-#devtools::install_github("andrewheiss/scriptuRs")
-library(scriptuRs)
-```
-
-```{r}
-dplyr::glimpse(scriptuRs::book_of_mormon)
-```
-
-Examples:
-
-- [Tidy text, parts of speech, and unique words in the Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
-
-### hcandersenr
-
-The **hcandersenr** package includes many of H.C. Andersen's fairy tales in 5 difference languages.
-
-```{r}
-#devtools::install_github("EmilHvitfeldt/hcandersenr")
-library(hcandersenr)
-```
-
-The fairy tales are found in the following data frames `hcandersen_en`, `hcandersen_da`, `hcandersen_de`, `hcandersen_es` and `hcandersen_fr` for the English, Danish, German, Spanish and French versions respectively. Please be advised that all fairy tales aren't available in all languages in this package.
-
-```{r}
-dplyr::glimpse(hcandersen_en)
-```
-
-All the fairy tales are collected in the following data.frame:
-
-```{r}
-dplyr::glimpse(hca_fairytales)
 ```
 
 Examples:
