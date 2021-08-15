@@ -47,7 +47,9 @@ rather how to get a data set to get started with minimal hassle.
 
 ### janeaustenr
 
-First we have the **janeaustenr** package popularized by Julia Silge in
+First we have the
+[janeaustenr](https://github.com/juliasilge/janeaustenr) package
+popularized by Julia Silge in
 [tidytextmining](https://www.tidytextmining.com/).
 
 ``` r
@@ -96,9 +98,9 @@ Examples:
 
 ### quRan
 
-The **quRan** package contains the complete text of the Qur’an in Arabic
-(with and without vowels) and in English (the Yusuf Ali and Saheeh
-International translations).
+The [quRan](https://github.com/andrewheiss/quRan) package contains the
+complete text of the Qur’an in Arabic (with and without vowels) and in
+English (the Yusuf Ali and Saheeh International translations).
 
 ``` r
 #install.packages("quRan")
@@ -136,11 +138,11 @@ thread](https://twitter.com/andrewheiss/status/1078428352577327104)
 
 ### scriptuRs
 
-The **scriptuRs** package full text of the Standard Works for The Church
-of Jesus Christ of Latter-day Saints: the Old and New Testaments, the
-Book of Mormon, the Doctrine and Covenants, and the Pearl of Great
-Price. Each volume is in a data frame with a row for each verse, along
-with 19 columns of detailed metadata.
+The [scriptuRs](https://github.com/andrewheiss/scriptuRs) package full
+text of the Standard Works for The Church of Jesus Christ of Latter-day
+Saints: the Old and New Testaments, the Book of Mormon, the Doctrine and
+Covenants, and the Pearl of Great Price. Each volume is in a data frame
+with a row for each verse, along with 19 columns of detailed metadata.
 
 ``` r
 #install.packages("scriptuRs")
@@ -179,8 +181,9 @@ Examples:
 
 ### friends
 
-The goal of **friends** to provide the complete script transcription of
-the [Friends](https://en.wikipedia.org/wiki/Friends) sitcom. The data
+The goal of [friends](https://github.com/emilhvitfeldt/friends) to
+provide the complete script transcription of the
+[Friends](https://en.wikipedia.org/wiki/Friends) sitcom. The data
 originates from the [Character
 Mining](https://github.com/emorynlp/character-mining) repository which
 includes references to scientific explorations using this data. This
@@ -242,8 +245,8 @@ dplyr::glimpse(friends_info)
 
 ### hcandersenr
 
-The **hcandersenr** package includes many of H.C. Andersen’s fairy tales
-in 5 difference languages.
+The [hcandersenr](https://github.com/emilhvitfeldt/hcandersenr) package
+includes many of H.C. Andersen’s fairy tales in 5 difference languages.
 
 ``` r
 #install.packages("hcandersenr")
@@ -281,8 +284,8 @@ Still pending.
 
 ### proustr
 
-This **proustr** packages gives you access to tools designed to do
-Natural Language Processing in French.
+This [proustr](https://github.com/ColinFay/proustr) packages gives you
+access to tools designed to do Natural Language Processing in French.
 
 ``` r
 #install.packages("proustr")
@@ -315,8 +318,8 @@ dplyr::glimpse(proust_books())
 
 ### schrute
 
-This **schrute** contains complete script transcription for The Office
-(US) television show.
+This [schrute](https://github.com/bradlindblad/schrute) contains
+complete script transcription for The Office (US) television show.
 
 ``` r
 #install.packages("schrute")
@@ -355,12 +358,13 @@ Examples:
 
 ### textdata
 
-The goal of **textdata** is to provide access to text-related data sets
-for easy access without bundling them inside a package. Some text
-datasets are too large to store within an R package or are licensed in
-such a way that prevents them from being included in an OSS-licensed
-package. Instead, this package provides a framework to download, parse,
-and store the datasets on the disk and load them when needed.
+The goal of [textdata](https://github.com/emilhvitfeldt/textdata) is to
+provide access to text-related data sets for easy access without
+bundling them inside a package. Some text datasets are too large to
+store within an R package or are licensed in such a way that prevents
+them from being included in an OSS-licensed package. Instead, this
+package provides a framework to download, parse, and store the datasets
+on the disk and load them when needed.
 
 ``` r
 #install.packages("textdata")
@@ -402,9 +406,10 @@ with(catalogue, split(name, type))
 
 ### gutenbergr
 
-The **gutenbergr** package allows for search and download of public
-domain texts from [Project Gutenberg](https://www.gutenberg.org/).
-Currently includes more then 57,000 free eBooks.
+The [gutenbergr](https://github.com/ropensci/gutenbergr) package allows
+for search and download of public domain texts from [Project
+Gutenberg](https://www.gutenberg.org/). Currently includes more then
+57,000 free eBooks.
 
 ``` r
 #install.packages("gutenbergr")
@@ -452,8 +457,9 @@ Still pending.
 
 ### text2vec
 
-While the **text2vec** package is data package by itself, it does
-include a textual data set inside.
+While the [text2vec](https://github.com/dselivanov/text2vec) package
+isn’t a data package by itself, it does include a textual data set
+inside.
 
 ``` r
 #install.packages("text2vec")
@@ -476,8 +482,8 @@ dplyr::glimpse(movie_review)
 
 ### epubr
 
-The **epubr** package allows for extraction of metadata and textual
-content of epub files.
+The [epubr](https://github.com/ropensci/epubr) package allows for
+extraction of metadata and textual content of epub files.
 
 ``` r
 install.packages("epubr")
@@ -491,8 +497,8 @@ Further information and examples can be found
 
 ### appa
 
-This **appa** contains complete script transcription for Avatar: The
-Last Airbender.
+This [appa](https://github.com/averyrobbins1/appa) package contains
+complete script transcription for Avatar: The Last Airbender.
 
 ``` r
 #devtools::install_github("averyrobbins1/appa")
@@ -522,10 +528,11 @@ dplyr::glimpse(appa)
 
 ### sacred
 
-The **sacred** package includes 9 tidy data sets: `apocrypha`,
-`book_of_mormon`, `doctrine_and_covenants`, `greek_new_testament`,
-`king_james_version`, `pearl_of_great_price`, `tanach`, `vulgate` and
-`septuagint` with column describing the position within each work.
+The [sacred](https://github.com/JohnCoene/sacred) package includes 9
+tidy data sets: `apocrypha`, `book_of_mormon`, `doctrine_and_covenants`,
+`greek_new_testament`, `king_james_version`, `pearl_of_great_price`,
+`tanach`, `vulgate` and `septuagint` with column describing the position
+within each work.
 
 ``` r
 #devtools::install_github("JohnCoene/sacred")
@@ -549,8 +556,8 @@ Still pending.
 
 ### harrypotter
 
-The **harrypotter** package includes the text from all 7 main series
-books.
+The [harrypotter](https://github.com/bradleyboehmke/harrypotter) package
+includes the text from all 7 main series books.
 
 ``` r
 #devtools::install_github("bradleyboehmke/harrypotter")
@@ -577,8 +584,8 @@ Examples:
 
 ### hgwellsr
 
-The **hgwellsr** package provides access to the full texts of six novels
-by H. G. Wells.
+The [hgwellsr](https://github.com/erikhoward/hgwellsr) package provides
+access to the full texts of six novels by H. G. Wells.
 
 ``` r
 #devtools::install_github("erikhoward/hgwellsr")
@@ -608,8 +615,8 @@ head(annveronica, 10)
 
 ### jeeves
 
-The **jeeves** package provides access to the full texts of 38 works by
-P.G. Wodehouse.
+The [jeeves](https://github.com/aniruhil/jeeves) package provides access
+to the full texts of 38 works by P.G. Wodehouse.
 
 ``` r
 #devtools::install_github("aniruhil/jeeves")
@@ -627,8 +634,8 @@ glimpse(adamselindistress)
 
 ### koanr
 
-The **koanr** package includes text from several of the more important
-Zen koan texts.
+The [koanr](https://github.com/malcolmbarrett/koanr) package includes
+text from several of the more important Zen koan texts.
 
 ``` r
 #devtools::install_github("malcolmbarrett/koanr")
@@ -652,10 +659,11 @@ dplyr::glimpse(gateless_gate)
 
 ### rperseus
 
-The goal of rperseus is to furnish classicists, textual critics, and R
-enthusiasts with texts from the Classical World. While the English
-translations of most texts are available through `gutenbergr`, rperseus
-returns these works in their original language–Greek, Latin, and Hebrew.
+The goal of [rperseus](https://github.com/ropensci/rperseus) is to
+furnish classicists, textual critics, and R enthusiasts with texts from
+the Classical World. While the English translations of most texts are
+available through `gutenbergr`, rperseus returns these works in their
+original language–Greek, Latin, and Hebrew.
 
 ``` r
 #devtools::install_github("ropensci/rperseus")
@@ -683,12 +691,13 @@ examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
 
 ### tidygutenbergr
 
-The **tidygutenbergr** contains many functions that will fetch data from
-[Project Gutenberg](https://www.gutenberg.org/) using the **gutenbergr**
-package and do some light cleaning.
+The [tidygutenbergr](https://github.com/emilHvitfeldt/tidygutenbergr)
+contains many functions that will fetch data from [Project
+Gutenberg](https://www.gutenberg.org/) using the **gutenbergr** package
+and do some light cleaning.
 
 ``` r
-#devtools::install_github("milHvitfeldt/tidygutenbergr")
+#devtools::install_github("emilHvitfeldt/tidygutenbergr")
 library(tidygutenbergr)
 ```
 
@@ -710,8 +719,8 @@ glimpse(a_tale_of_two_cities())
 
 ### subtools
 
-The **subtools** package doesn’t include any textual data, but allows
-you to read subtitle files.
+The [subtools](https://github.com/fkeck/subtools) package doesn’t
+include any textual data, but allows you to read subtitle files.
 
 ``` r
 #devtools::install_github("fkeck/subtools")
