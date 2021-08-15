@@ -10,30 +10,31 @@ rather how to get a data set to get started with minimal hassle.
 
 # Table of Contents
 
-  - [Main page](#R-text-data)
-  - [CRAN packages](#cran-packages)
-      - [janeaustenr](#janeaustenr)
-      - [quRan](#quran)
-      - [scriptuRs](#scripturs)
-      - [hcandersenr](#hcandersenr)
-      - [proustr](#proustr)
-      - [gutenbergr](#gutenbergr)
-      - [text2vec](#text2vec)
-      - [epubr](#epubr)
-  - [Github packages](#github-packages)
-      - [sacred](#sacred)
-      - [harrypotter](#harrypotter)
-      - [koanr](#koanr)
-      - [rperseus](#rperseus)
-      - [subtools](#subtools)
-  - [Wild data](#wild-data)
-      - Cornell data
-          - [polarity dataset v2.0](#polarity-dataset-v20)
-          - [sentence polarity dataset
+-   [Main page](#R-text-data)
+-   [CRAN packages](#cran-packages)
+    -   [janeaustenr](#janeaustenr)
+    -   [quRan](#quran)
+    -   [scriptuRs](#scripturs)
+    -   [hcandersenr](#hcandersenr)
+    -   [proustr](#proustr)
+    -   [gutenbergr](#gutenbergr)
+    -   [text2vec](#text2vec)
+    -   [epubr](#epubr)
+-   [Github packages](#github-packages)
+    -   [sacred](#sacred)
+    -   [harrypotter](#harrypotter)
+    -   [koanr](#koanr)
+    -   [rperseus](#rperseus)
+    -   [subtools](#subtools)
+-   [Wild data](#wild-data)
+    -   Cornell data
+        -   [polarity dataset v2.0](#polarity-dataset-v20)
+        -   [sentence polarity dataset
             v1.0](#sentence-polarity-dataset-v10)
-          - [scale dataset v1.0](#scale-dataset-v10)
-          - [subjectivity dataset v1.0](#subjectivity-dataset-v10)
-      - [SouthParkData](#southparkdata)
+        -   [scale dataset v1.0](#scale-dataset-v10)
+        -   [subjectivity dataset v1.0](#subjectivity-dataset-v10)
+    -   [SouthParkData](#southparkdata)
+    -   [Saudi Newspapers Corpus](#saudi-newspapers-corpus)
 
 ## CRAN packages
 
@@ -84,7 +85,7 @@ dplyr::glimpse(austen_books())
 
 Examples:
 
-  - <https://juliasilge.com/blog/if-i-loved-nlp-less/>
+-   <https://juliasilge.com/blog/if-i-loved-nlp-less/>
 
 ## quRan
 
@@ -166,7 +167,7 @@ dplyr::glimpse(scriptuRs::book_of_mormon)
 
 Examples:
 
-  - [Tidy text, parts of speech, and unique words in the
+-   [Tidy text, parts of speech, and unique words in the
     Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
 
 ### hcandersenr
@@ -220,15 +221,15 @@ library(proustr)
 
 Furthermore it includes the following 7 books
 
-  - Du côté de chez Swann (1913): `ducotedechezswann`.
-  - À l’ombre des jeunes filles en fleurs (1919):
+-   Du côté de chez Swann (1913): `ducotedechezswann`.
+-   À l’ombre des jeunes filles en fleurs (1919):
     `alombredesjeunesfillesenfleurs`.
-  - Le Côté de Guermantes (1921): `lecotedeguermantes`.
-  - Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
-  - La Prisonnière (1923) :`laprisonniere`.
-  - Albertine disparue (1925, also know as : La Fugitive) :
+-   Le Côté de Guermantes (1921): `lecotedeguermantes`.
+-   Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
+-   La Prisonnière (1923) :`laprisonniere`.
+-   Albertine disparue (1925, also know as : La Fugitive) :
     `albertinedisparue`.
-  - Le Temps retrouvé (1927) : `letempretrouve`.
+-   Le Temps retrouvé (1927) : `letempretrouve`.
 
 Which are all found in the `proust_books()` function.
 
@@ -380,10 +381,10 @@ dplyr::glimpse(harrypotter::chamber_of_secrets)
 
 Examples:
 
-  - [Harry Plotter: Celebrating the 20 year anniversary with tidytext
+-   [Harry Plotter: Celebrating the 20 year anniversary with tidytext
     and the tidyverse in
     R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
-  - [Harry Plotter: Part 2 – Hogwarts Houses and their
+-   [Harry Plotter: Part 2 – Hogwarts Houses and their
     Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
 
 ### koanr
@@ -456,11 +457,11 @@ the use of this function can be found in the examples.
 
 Examples:
 
-  - [Movies and series subtitles in R with
+-   [Movies and series subtitles in R with
     subtools](http://www.pieceofk.fr/?p=437)
-  - [A tidy text analysis of Rick and
+-   [A tidy text analysis of Rick and
     Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
-  - [You beautiful, naïve, sophisticated newborn
+-   [You beautiful, naïve, sophisticated newborn
     series](https://masalmon.eu/2017/11/05/newborn-serie/)
 
 ## Wild data
@@ -604,16 +605,62 @@ glimpse(data)
 the following github repository
 [BobAdamsEE/SouthParkData](https://github.com/BobAdamsEE/SouthParkData)
 includes the script of the first 19 seasons of South Park. The following
-code snippet lets you download them all at
-once.
+code snippet lets you download them all at once.
 
 ``` r
 url_base <- "https://raw.githubusercontent.com/BobAdamsEE/SouthParkData/master/by-season"
 urls <- paste0(url_base, "/Season-", 1:19, ".csv")
 
 data <- map_df(urls, ~ read_csv(.x))
+
+glimpse(data)
+#> Rows: 73,139
+#> Columns: 4
+#> $ Season    <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+#> $ Episode   <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+#> $ Character <chr> "Boys", "Kyle", "Ike", "Kyle", "Cartman", "Kyle", "Stan", "K…
+#> $ Line      <chr> "School day, school day, teacher's golden ru...\n", "Ah, dam…
 ```
 
 Examples:
 
-  - <https://www.kaylinpavlik.com/text-mining-south-park/>
+-   <https://www.kaylinpavlik.com/text-mining-south-park/>
+
+### Saudi Newspapers Corpus
+
+The following Github repository
+[inparallel/SaudiNewsNet](https://github.com/inparallel/SaudiNewsNet)
+includes data and text from 31030 Arabic newspaper articles along with
+metadata, extracted from various online Saudi newspapers.
+
+``` r
+library(rio)
+library(glue)
+library(fs)
+library(purrr)
+
+dates <- c("2015-07-21", "2015-07-22", "2015-07-23", "2015-07-24", "2015-07-25",
+           "2015-07-26", "2015-07-27", "2015-07-31", "2015-08-01", "2015-08-02",
+           "2015-08-03", "2015-08-04", "2015-08-06", "2015-08-07", "2015-08-08",
+           "2015-08-09", "2015-08-10", "2015-08-11")
+
+tmp_path <- path_temp()
+
+urls <- glue("https://raw.githubusercontent.com/inparallel/SaudiNewsNet/master/dataset/{dates}.zip")
+paths <- path(tmp_path, dates, ext = "zip")
+
+data <- map2_dfr(urls, paths, ~ {
+  download.file(.x, .y)
+  import_list(.y)[[1]]
+})
+
+glimpse(data)
+#> Rows: 31,030
+#> Columns: 6
+#> $ source         <chr> "aawsat", "aawsat", "aawsat", "aawsat", "aawsat", "aaws…
+#> $ url            <chr> "http://aawsat.com/home/article/410826/بريطانيا-أربعة-م…
+#> $ date_extracted <chr> "2015-07-21 02:51:32", "2015-07-21 02:51:33", "2015-07-…
+#> $ title          <chr> "بريطانيا: أربعة محاور لاستراتيجية جديدة تتصدى للتطرف ع…
+#> $ author         <chr> "لندن: رنيم حنوش", "لندن: «الشرق الأوسط أونلاين»", "لند…
+#> $ content        <chr> "حدد رئيس الوزراء البريطاني ديفيد كاميرون، اليوم (الاثن…
+```
