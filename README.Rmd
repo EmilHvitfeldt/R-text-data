@@ -27,6 +27,7 @@ Table of Contents
     * [scriptuRs](#scripturs)
     * [hcandersenr](#hcandersenr)
     * [proustr](#proustr)
+    * [schrute](#schrute)
     * [textdata](#textdata)
     * [gutenbergr](#gutenbergr)
     * [text2vec](#text2vec)
@@ -159,6 +160,27 @@ Which are all found in the `proust_books()` function.
 ```{r}
 dplyr::glimpse(proust_books())
 ```
+
+### schrute
+
+This **schrute** containscomplete script transcription for The Office (US) television show.
+
+```{r}
+#install.packages("schrute")
+library(schrute)
+```
+
+The data set includes the full transciption, line by line with metadata about episode number, season number, character, and more.
+
+```{r}
+glimpse(theoffice)
+```
+
+Examples:
+
+- [Tidy Tuesday screencast: analyzing ratings and scripts from The Office](https://www.youtube.com/watch?v=_IvAubTDQME&t=1092s)
+- [Lasso regression with tidymodels and The Office](https://www.youtube.com/watch?v=R32AsuKICAY)
+- [tidytuesday: Part-of-Speech and textrecipes with The Office](https://www.emilhvitfeldt.com/post/tidytuesday-pos-textrecipes-the-office/)
 
 ### textdata
 

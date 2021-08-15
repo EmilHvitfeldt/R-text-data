@@ -17,6 +17,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [scriptuRs](#scripturs)
     -   [hcandersenr](#hcandersenr)
     -   [proustr](#proustr)
+    -   [schrute](#schrute)
     -   [textdata](#textdata)
     -   [gutenbergr](#gutenbergr)
     -   [text2vec](#text2vec)
@@ -245,6 +246,46 @@ dplyr::glimpse(proust_books())
 #> $ volume <chr> "Première partie : Combray", "Première partie : Combray",…
 #> $ year   <dbl> 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191…
 ```
+
+### schrute
+
+This **schrute** containscomplete script transcription for The Office
+(US) television show.
+
+``` r
+#install.packages("schrute")
+library(schrute)
+```
+
+The data set includes the full transciption, line by line with metadata
+about episode number, season number, character, and more.
+
+``` r
+glimpse(theoffice)
+#> Rows: 55,130
+#> Columns: 12
+#> $ index            <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
+#> $ season           <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+#> $ episode          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+#> $ episode_name     <chr> "Pilot", "Pilot", "Pilot", "Pilot", "Pilot", "Pilot",…
+#> $ director         <chr> "Ken Kwapis", "Ken Kwapis", "Ken Kwapis", "Ken Kwapis…
+#> $ writer           <chr> "Ricky Gervais;Stephen Merchant;Greg Daniels", "Ricky…
+#> $ character        <chr> "Michael", "Jim", "Michael", "Jim", "Michael", "Micha…
+#> $ text             <chr> "All right Jim. Your quarterlies look very good. How …
+#> $ text_w_direction <chr> "All right Jim. Your quarterlies look very good. How …
+#> $ imdb_rating      <dbl> 7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 7.6…
+#> $ total_votes      <int> 3706, 3706, 3706, 3706, 3706, 3706, 3706, 3706, 3706,…
+#> $ air_date         <fct> 2005-03-24, 2005-03-24, 2005-03-24, 2005-03-24, 2005-…
+```
+
+Examples:
+
+-   [Tidy Tuesday screencast: analyzing ratings and scripts from The
+    Office](https://www.youtube.com/watch?v=_IvAubTDQME&t=1092s)
+-   [Lasso regression with tidymodels and The
+    Office](https://www.youtube.com/watch?v=R32AsuKICAY)
+-   [tidytuesday: Part-of-Speech and textrecipes with The
+    Office](https://www.emilhvitfeldt.com/post/tidytuesday-pos-textrecipes-the-office/)
 
 ### textdata
 
