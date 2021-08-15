@@ -33,6 +33,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [rperseus](#rperseus)
     -   [tidygutenbergr](#tidygutenbergr)
     -   [subtools](#subtools)
+-   [tidytuesday](#tidytuesday)
 -   [Wild data](#wild-data)
     -   Cornell data
         -   [polarity dataset v2.0](#polarity-dataset-v20)
@@ -737,6 +738,47 @@ Examples:
     Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
 -   [You beautiful, naïve, sophisticated newborn
     series](https://masalmon.eu/2017/11/05/newborn-serie/)
+
+## Tidytuesday
+
+The [tidytuesday](https://github.com/rfordatascience/tidytuesday)
+project is an amazing collection of data sets that are well suited for
+beginners to hone their skills. Below is a list of the data sets that
+contain enough text data to analyse. This list does contain data set
+that are already present on this page but are kept here for
+completeness.
+
+Examples will not be shown here since that is taken care of in the
+respective pages.
+
+| Date       | Topic                                                                                                                          |
+|------------|--------------------------------------------------------------------------------------------------------------------------------|
+| 2019-01-01 | [#rstats and #TidyTuesday Tweets from rtweet](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-01) |
+| 2019-03-12 | [Board Games Database](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12)                        |
+| 2019-04-23 | [Anime Dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-04-23)                               |
+| 2019-05-28 | [Wine ratings](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-28)                                |
+| 2019-06-25 | [UFO Sightings around the world](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-06-25)              |
+| 2019-09-10 | [Amusement Park injuries](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-09-10)                     |
+| 2019-10-22 | [Horror movie metadata](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-22)                       |
+| 2019-12-17 | [Adoptable dogs](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-12-17)                              |
+| 2019-12-24 | [Christmas Music Billboards](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-12-24)                  |
+| 2020-03-17 | [The Office - Words and Numbers](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-03-17)              |
+| 2020-04-21 | [GDPR Fines](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-04-21)                                  |
+| 2020-04-28 | [Broadway Weekly Grosses](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-04-28)                     |
+| 2020-05-05 | [Animal Crossing - New Horizons](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-05-05)              |
+| 2020-05-26 | [Cocktails](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-05-26)                                   |
+| 2020-06-09 | [African American Achievements](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-06-09)               |
+| 2020-06-16 | [American Slavery and Juneteenth](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-06-16)             |
+| 2020-08-11 | [Avatar: The last airbender](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-08-11)                  |
+| 2020-09-08 | [Friends](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-08)                                     |
+| 2020-09-29 | [Beyoncé and Taylor Swift Lyrics](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29)             |
+| 2020-12-08 | [Women of 2020](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-12-08)                               |
+| 2021-01-12 | [Art Collections](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-01-12)                             |
+| 2021-03-02 | [Superbowl commercials](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-03-02)                       |
+| 2021-03-23 | [UN Votes](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-03-23)                                    |
+| 2021-04-20 | [Netflix Shows](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-04-20)                               |
+| 2021-04-27 | [CEO Departures](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-04-27)                              |
+| 2021-06-15 | [Du Bois and Juneteenth Revisited](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-06-15)            |
 
 ## Wild data
 

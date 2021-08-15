@@ -18,40 +18,40 @@ library(tidyverse)
 
 The goal of this repository is to act as a collection of textual data set to be used for training and practice in text mining/NLP in R. This repository will not be a guide on how to do text analysis/mining but rather how to get a data set to get started with minimal hassle.
 
-Table of Contents
-=================
-  * [Main page](#R-text-data)
-  * [CRAN packages](#cran-packages)
-    * [janeaustenr](#janeaustenr)
-    * [quRan](#quran)
-    * [scriptuRs](#scripturs)
-    * [friends](#friends)
-    * [hcandersenr](#hcandersenr)
-    * [proustr](#proustr)
-    * [schrute](#schrute)
-    * [textdata](#textdata)
-    * [gutenbergr](#gutenbergr)
-    * [text2vec](#text2vec)
-    * [epubr](#epubr)
-  * [Github packages](#github-packages)
-    * [appa](#appa)
-    * [sacred](#sacred)
-    * [harrypotter](#harrypotter)
-    * [hgwellsr](#hgwellsr)
-    * [jeeves](#jeeves)
-    * [koanr](#koanr)
-    * [rperseus](#rperseus)
-    * [tidygutenbergr](#tidygutenbergr)
-    * [subtools](#subtools)
-  * [Wild data](#wild-data)
-    * Cornell data
-      * [polarity dataset v2.0](#polarity-dataset-v20)
-      * [sentence polarity dataset v1.0](#sentence-polarity-dataset-v10)
-      * [scale dataset v1.0](#scale-dataset-v10)
-      * [subjectivity dataset v1.0](#subjectivity-dataset-v10)
-    * [SouthParkData](#southparkdata)
-    * [Saudi Newspapers Corpus](#saudi-newspapers-corpus)
-    
+# Table of Contents
+
+-   [Main page](#R-text-data)
+-   [CRAN packages](#cran-packages)
+    -   [janeaustenr](#janeaustenr)
+    -   [quRan](#quran)
+    -   [scriptuRs](#scripturs)
+    -   [friends](#friends)
+    -   [hcandersenr](#hcandersenr)
+    -   [proustr](#proustr)
+    -   [schrute](#schrute)
+    -   [textdata](#textdata)
+    -   [gutenbergr](#gutenbergr)
+    -   [text2vec](#text2vec)
+    -   [epubr](#epubr)
+-   [Github packages](#github-packages)
+    -   [appa](#appa)
+    -   [sacred](#sacred)
+    -   [harrypotter](#harrypotter)
+    -   [hgwellsr](#hgwellsr)
+    -   [jeeves](#jeeves)
+    -   [koanr](#koanr)
+    -   [rperseus](#rperseus)
+    -   [tidygutenbergr](#tidygutenbergr)
+    -   [subtools](#subtools)
+-   [tidytuesday](#tidytuesday)
+-   [Wild data](#wild-data)
+    -   Cornell data
+        -   [polarity dataset v2.0](#polarity-dataset-v20)
+        -   [sentence polarity dataset v1.0](#sentence-polarity-dataset-v10)
+        -   [scale dataset v1.0](#scale-dataset-v10)
+        -   [subjectivity dataset v1.0](#subjectivity-dataset-v10)
+    -   [SouthParkData](#southparkdata)
+    -   [Saudi Newspapers Corpus](#saudi-newspapers-corpus)
 
 ## CRAN packages
 
@@ -78,7 +78,7 @@ dplyr::glimpse(austen_books())
 
 Examples:
 
-- https://juliasilge.com/blog/if-i-loved-nlp-less/
+-   <https://juliasilge.com/blog/if-i-loved-nlp-less/>
 
 ### quRan
 
@@ -112,7 +112,7 @@ dplyr::glimpse(scriptuRs::book_of_mormon)
 
 Examples:
 
-- [Tidy text, parts of speech, and unique words in the Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
+-   [Tidy text, parts of speech, and unique words in the Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
 
 ### friends
 
@@ -175,13 +175,13 @@ library(proustr)
 
 Furthermore it includes the following 7 books
 
-+ Du côté de chez Swann (1913): `ducotedechezswann`. 
-+ À l'ombre des jeunes filles en fleurs (1919): `alombredesjeunesfillesenfleurs`.
-+ Le Côté de Guermantes (1921): `lecotedeguermantes`.
-+ Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
-+ La Prisonnière (1923) :`laprisonniere`.
-+ Albertine disparue (1925, also know as : La Fugitive) : `albertinedisparue`.
-+ Le Temps retrouvé (1927) : `letempretrouve`.
+-   Du côté de chez Swann (1913): `ducotedechezswann`.
+-   À l'ombre des jeunes filles en fleurs (1919): `alombredesjeunesfillesenfleurs`.
+-   Le Côté de Guermantes (1921): `lecotedeguermantes`.
+-   Sodome et Gomorrhe (1922) : `sodomeetgomorrhe`.
+-   La Prisonnière (1923) :`laprisonniere`.
+-   Albertine disparue (1925, also know as : La Fugitive) : `albertinedisparue`.
+-   Le Temps retrouvé (1927) : `letempretrouve`.
 
 Which are all found in the `proust_books()` function.
 
@@ -206,9 +206,9 @@ glimpse(theoffice)
 
 Examples:
 
-- [Tidy Tuesday screencast: analyzing ratings and scripts from The Office](https://www.youtube.com/watch?v=_IvAubTDQME&t=1092s)
-- [Lasso regression with tidymodels and The Office](https://www.youtube.com/watch?v=R32AsuKICAY)
-- [tidytuesday: Part-of-Speech and textrecipes with The Office](https://www.emilhvitfeldt.com/post/tidytuesday-pos-textrecipes-the-office/)
+-   [Tidy Tuesday screencast: analyzing ratings and scripts from The Office](https://www.youtube.com/watch?v=_IvAubTDQME&t=1092s)
+-   [Lasso regression with tidymodels and The Office](https://www.youtube.com/watch?v=R32AsuKICAY)
+-   [tidytuesday: Part-of-Speech and textrecipes with The Office](https://www.emilhvitfeldt.com/post/tidytuesday-pos-textrecipes-the-office/)
 
 ### textdata
 
@@ -246,7 +246,7 @@ To use **gutenbergr** you must know the Gutenberg id of the work you wish to ana
 gutenberg_works(title == "Wuthering Heights")
 ```
 
-With that id you can use the `gutenberg_download()` function to  
+With that id you can use the `gutenberg_download()` function to
 
 ```{r}
 gutenberg_download(768)
@@ -265,7 +265,7 @@ While the [text2vec](https://github.com/dselivanov/text2vec) package isn't a dat
 library(text2vec)
 ```
 
-The data frame `movie_review` contains 5000 IMDB movie reviews selected for sentiment analysis. It has been preprocessed to include sentiment that means that an IMDB rating < 5 results in a sentiment score of 0, and a rating >=7 has a sentiment score of 1.
+The data frame `movie_review` contains 5000 IMDB movie reviews selected for sentiment analysis. It has been preprocessed to include sentiment that means that an IMDB rating \< 5 results in a sentiment score of 0, and a rating \>=7 has a sentiment score of 1.
 
 ```{r}
 dplyr::glimpse(movie_review)
@@ -333,8 +333,8 @@ dplyr::glimpse(harrypotter::chamber_of_secrets)
 
 Examples:
 
-- [Harry Plotter: Celebrating the 20 year anniversary with tidytext and the tidyverse in R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
-- [Harry Plotter: Part 2 – Hogwarts Houses and their Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
+-   [Harry Plotter: Celebrating the 20 year anniversary with tidytext and the tidyverse in R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
+-   [Harry Plotter: Part 2 – Hogwarts Houses and their Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
 
 ### hgwellsr
 
@@ -345,12 +345,12 @@ The [hgwellsr](https://github.com/erikhoward/hgwellsr) package provides access t
 library(hgwellsr)
 ```
 
-+ Ann Veronica (1909): `annveronica`. 
-+ The History of Mr Polly (1910): `mrpolly`.
-+ The Invisible Man (1897): `invisibleman`.
-+ The Island of Doctor Moreau (1896): `doctormoreau`.
-+ The Time Machine (1895):`timemachine`.
-+ The War of the Worlds (1898): `waroftheworlds`.
+-   Ann Veronica (1909): `annveronica`.
+-   The History of Mr Polly (1910): `mrpolly`.
+-   The Invisible Man (1897): `invisibleman`.
+-   The Island of Doctor Moreau (1896): `doctormoreau`.
+-   The Time Machine (1895):`timemachine`.
+-   The War of the Worlds (1898): `waroftheworlds`.
 
 ```{r}
 head(annveronica, 10)
@@ -371,7 +371,7 @@ glimpse(adamselindistress)
 
 ### koanr
 
-The [koanr](https://github.com/malcolmbarrett/koanr) package includes text from several of the more important Zen koan texts. 
+The [koanr](https://github.com/malcolmbarrett/koanr) package includes text from several of the more important Zen koan texts.
 
 ```{r message=FALSE}
 #devtools::install_github("malcolmbarrett/koanr")
@@ -421,26 +421,61 @@ glimpse(a_tale_of_two_cities())
 
 ### subtools
 
-The [subtools](https://github.com/fkeck/subtools) package doesn't include any textual data, but allows you to read subtitle files. 
+The [subtools](https://github.com/fkeck/subtools) package doesn't include any textual data, but allows you to read subtitle files.
 
 ```{r}
 #devtools::install_github("fkeck/subtools")
 library(subtools)
 ```
 
-the use of this function can be found in the examples.  
+the use of this function can be found in the examples.
 
 Examples:
 
-- [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
-- [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
-- [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
+-   [Movies and series subtitles in R with subtools](http://www.pieceofk.fr/?p=437)
+-   [A tidy text analysis of Rick and Morty](http://tamaszilagyi.com/blog/a-tidy-text-analysis-of-rick-and-morty/)
+-   [You beautiful, naïve, sophisticated newborn series](https://masalmon.eu/2017/11/05/newborn-serie/)
+
+## Tidytuesday
+
+The [tidytuesday](https://github.com/rfordatascience/tidytuesday) project is an amazing collection of data sets that are well suited for beginners to hone their skills. Below is a list of the data sets that contain enough text data to analyse. This list does contain data set that are already present on this page but are kept here for completeness. 
+
+Examples will not be shown here since that is taken care of in the respective pages.
+
+| Date | Topic |
+|------|-------|
+| 2019-01-01 | [#rstats and #TidyTuesday Tweets from rtweet](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-01) |
+| 2019-03-12 | [Board Games Database](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12) |
+| 2019-04-23 | [Anime Dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-04-23) |
+| 2019-05-28 | [Wine ratings](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-28) |
+| 2019-06-25 | [UFO Sightings around the world](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-06-25) |
+| 2019-09-10 | [Amusement Park injuries](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-09-10) |
+| 2019-10-22 | [Horror movie metadata](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-22) |
+| 2019-12-17 | [Adoptable dogs](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-12-17) |
+| 2019-12-24 | [Christmas Music Billboards](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-12-24) |
+| 2020-03-17 | [The Office - Words and Numbers](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-03-17) |
+| 2020-04-21 | [GDPR Fines](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-04-21) |
+| 2020-04-28 | [Broadway Weekly Grosses](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-04-28) |
+| 2020-05-05 | [Animal Crossing - New Horizons](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-05-05) |
+| 2020-05-26 | [Cocktails](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-05-26) |
+| 2020-06-09 | [African American Achievements](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-06-09) |
+| 2020-06-16 | [American Slavery and Juneteenth](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-06-16) |
+| 2020-08-11 | [Avatar: The last airbender](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-08-11) |
+| 2020-09-08 | [Friends](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-08) |
+| 2020-09-29 | [Beyoncé and Taylor Swift Lyrics](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29) |
+| 2020-12-08 | [Women of 2020](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-12-08) |
+| 2021-01-12 | [Art Collections](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-01-12) |
+| 2021-03-02 | [Superbowl commercials](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-03-02) |
+| 2021-03-23 | [UN Votes](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-03-23) |
+| 2021-04-20 | [Netflix Shows](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-04-20) |
+| 2021-04-27 | [CEO Departures](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-04-27) |
+| 2021-06-15 | [Du Bois and Juneteenth Revisited](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-06-15) |
 
 ## Wild data
 
 This sections includes public data sets and how to import them into R ready for analysis. It is generally advised to save the resulting data such that you don't re-download the data excessively.
 
-[Movie Review Data](http://www.cs.cornell.edu/people/pabo/movie-review-data/)  
+[Movie Review Data](http://www.cs.cornell.edu/people/pabo/movie-review-data/)
 
 This website include a handful of different movie review data sets. Below is the code chuck necessary to load in the data sets.
 
@@ -563,7 +598,7 @@ glimpse(data)
 
 Examples:
 
-- https://www.kaylinpavlik.com/text-mining-south-park/
+-   <https://www.kaylinpavlik.com/text-mining-south-park/>
 
 ### Saudi Newspapers Corpus
 
@@ -592,4 +627,3 @@ data <- map2_dfr(urls, paths, ~ {
 
 glimpse(data)
 ```
-
