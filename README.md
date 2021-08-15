@@ -17,6 +17,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [scriptuRs](#scripturs)
     -   [hcandersenr](#hcandersenr)
     -   [proustr](#proustr)
+    -   [textdata](#textdata)
     -   [gutenbergr](#gutenbergr)
     -   [text2vec](#text2vec)
     -   [epubr](#epubr)
@@ -245,6 +246,53 @@ dplyr::glimpse(proust_books())
 #> $ year   <dbl> 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191…
 ```
 
+### textdata
+
+The goal of **textdata** is to provide access to text-related data sets
+for easy access without bundling them inside a package. Some text
+datasets are too large to store within an R package or are licensed in
+such a way that prevents them from being included in an OSS-licensed
+package. Instead, this package provides a framework to download, parse,
+and store the datasets on the disk and load them when needed.
+
+``` r
+#install.packages("textdata")
+library(textdata)
+```
+
+All the functions used in this package will prompt you to download the
+files. Once they are downloaded and cached they are easily loaded.
+
+``` r
+glimpse(textdata::dataset_imdb())
+#> Rows: 25,000
+#> Columns: 2
+#> $ sentiment <chr> "neg", "neg", "neg", "neg", "neg", "neg", "neg", "neg", "neg…
+#> $ text      <chr> "Story of a man who has unnatural feelings for a pig. Starts…
+```
+
+Available data sets:
+
+``` r
+with(catalogue, split(name, type))
+#> $dataset
+#> [1] "v1.0 sentence polarity"          "AG News"                        
+#> [3] "DBpedia"                         "TREC-6 & TREC-50"               
+#> [5] "IMDb Large Movie Review Dataset"
+#> 
+#> $embeddings
+#> [1] "GloVe 6B"                "GloVe Twitter 27B"      
+#> [3] "GloVe Common Crawl 42B"  "GloVe Common Crawl 840B"
+#> 
+#> $lexicon
+#> [1] "AFINN-111"                                                   
+#> [2] "Loughran-McDonald Sentiment lexicon"                         
+#> [3] "Bing Sentiment Lexicon"                                      
+#> [4] "NRC Word-Emotion Association Lexicon"                        
+#> [5] "NRC Emotion Intensity Lexicon (aka Affect Intensity Lexicon)"
+#> [6] "The NRC Valence, Arousal, and Dominance Lexicon"
+```
+
 ### gutenbergr
 
 The **gutenbergr** package allows for search and download of public
@@ -262,11 +310,11 @@ wish to analyze. A text search of the works can be done using the
 
 ``` r
 gutenberg_works(title == "Wuthering Heights")
-#> # A tibble: 1 x 8
-#>   gutenberg_id title author gutenberg_autho… language gutenberg_books…
-#>          <int> <chr> <chr>             <int> <chr>    <chr>           
-#> 1          768 Wuth… Bront…              405 en       Gothic Fiction/…
-#> # … with 2 more variables: rights <chr>, has_text <lgl>
+#> # A tibble: 1 × 8
+#>   gutenberg_id title  author  gutenberg_autho… language gutenberg_booksh… rights
+#>          <int> <chr>  <chr>              <int> <chr>    <chr>             <chr> 
+#> 1          768 Wuthe… Brontë…              405 en       Gothic Fiction/M… Publi…
+#> # … with 1 more variable: has_text <lgl>
 ```
 
 With that id you can use the `gutenberg_download()` function to
@@ -275,20 +323,20 @@ With that id you can use the `gutenberg_download()` function to
 gutenberg_download(768)
 #> Determining mirror for Project Gutenberg from http://www.gutenberg.org/robot/harvest
 #> Using mirror http://aleph.gutenberg.org
-#> # A tibble: 12,085 x 2
-#>    gutenberg_id text                                                       
-#>           <int> <chr>                                                      
-#>  1          768 WUTHERING HEIGHTS                                          
-#>  2          768 ""                                                         
-#>  3          768 ""                                                         
-#>  4          768 CHAPTER I                                                  
-#>  5          768 ""                                                         
-#>  6          768 ""                                                         
-#>  7          768 1801.--I have just returned from a visit to my landlord--t…
-#>  8          768 neighbour that I shall be troubled with.  This is certainl…
-#>  9          768 country!  In all England, I do not believe that I could ha…
-#> 10          768 situation so completely removed from the stir of society. …
-#> # … with 12,075 more rows
+#> # A tibble: 12,314 × 2
+#>    gutenberg_id text               
+#>           <int> <chr>              
+#>  1          768 "Wuthering Heights"
+#>  2          768 ""                 
+#>  3          768 "by Emily Brontë"  
+#>  4          768 ""                 
+#>  5          768 ""                 
+#>  6          768 ""                 
+#>  7          768 ""                 
+#>  8          768 "CHAPTER I"        
+#>  9          768 ""                 
+#> 10          768 ""                 
+#> # … with 12,304 more rows
 ```
 
 Examples:
@@ -312,11 +360,11 @@ and a rating \>=7 has a sentiment score of 1.
 
 ``` r
 dplyr::glimpse(movie_review)
-#> Observations: 5,000
-#> Variables: 3
-#> $ id        <chr> "5814_8", "2381_9", "7759_3", "3630_4", "9495_8", "819…
-#> $ sentiment <int> 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, …
-#> $ review    <chr> "With all this stuff going down at the moment with MJ …
+#> Rows: 5,000
+#> Columns: 3
+#> $ id        <chr> "5814_8", "2381_9", "7759_3", "3630_4", "9495_8", "8196_8", …
+#> $ sentiment <int> 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, …
+#> $ review    <chr> "With all this stuff going down at the moment with MJ i've s…
 ```
 
 ### epubr
@@ -348,13 +396,13 @@ library(sacred)
 
 ``` r
 dplyr::glimpse(apocrypha)
-#> Observations: 5,725
-#> Variables: 5
-#> $ book.num <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
-#> $ book     <chr> "es1", "es1", "es1", "es1", "es1", "es1", "es1", "es1",…
-#> $ psalm    <chr> "11", "11", "11", "11", "11", "11", "11", "11", "11", "…
-#> $ verse    <chr> "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"…
-#> $ text     <chr> "And Josias held the feast of the passover in Jerusalem…
+#> Rows: 5,725
+#> Columns: 5
+#> $ book.num <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+#> $ book     <chr> "es1", "es1", "es1", "es1", "es1", "es1", "es1", "es1", "es1"…
+#> $ psalm    <chr> "11", "11", "11", "11", "11", "11", "11", "11", "11", "11", "…
+#> $ verse    <chr> "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"…
+#> $ text     <chr> "And Josias held the feast of the passover in Jerusalem unto …
 ```
 
 Examples:

@@ -27,6 +27,7 @@ Table of Contents
     * [scriptuRs](#scripturs)
     * [hcandersenr](#hcandersenr)
     * [proustr](#proustr)
+    * [textdata](#textdata)
     * [gutenbergr](#gutenbergr)
     * [text2vec](#text2vec)
     * [epubr](#epubr)
@@ -157,6 +158,27 @@ Which are all found in the `proust_books()` function.
 
 ```{r}
 dplyr::glimpse(proust_books())
+```
+
+### textdata
+
+The goal of **textdata** is to provide access to text-related data sets for easy access without bundling them inside a package. Some text datasets are too large to store within an R package or are licensed in such a way that prevents them from being included in an OSS-licensed package. Instead, this package provides a framework to download, parse, and store the datasets on the disk and load them when needed.
+
+```{r}
+#install.packages("textdata")
+library(textdata)
+```
+
+All the functions used in this package will prompt you to download the files. Once they are downloaded and cached they are easily loaded.
+
+```{r}
+glimpse(textdata::dataset_imdb())
+```
+
+Available data sets:
+
+```{r}
+with(catalogue, split(name, type))
 ```
 
 ### gutenbergr
