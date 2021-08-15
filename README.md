@@ -24,6 +24,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [sacred](#sacred)
     -   [harrypotter](#harrypotter)
     -   [hgwellsr](#hgwellsr)
+    -   [jeeves](#jeeves)
     -   [koanr](#koanr)
     -   [rperseus](#rperseus)
     -   [subtools](#subtools)
@@ -417,6 +418,25 @@ head(annveronica, 10)
 #>  [8] ""                                                                      
 #>  [9] "One Wednesday afternoon in late September, Ann Veronica Stanley came"  
 #> [10] "down from London in a state of solemn excitement and quite resolved to"
+```
+
+### jeeves
+
+The **jeeves** package provides access to the full texts of 38 works by
+P.G. Wodehouse.
+
+``` r
+#devtools::install_github("aniruhil/jeeves")
+library(jeeves)
+```
+
+``` r
+glimpse(adamselindistress)
+#> Rows: 10,291
+#> Columns: 3
+#> $ gutenberg_id <int> 2233, 2233, 2233, 2233, 2233, 2233, 2233, 2233, 2233, 223…
+#> $ text         <chr> "[Transcriber's Note for edition 11: in para. 4 of Chapte…
+#> $ title        <chr> "A Damsel in Distress", "A Damsel in Distress", "A Damsel…
 ```
 
 ### koanr

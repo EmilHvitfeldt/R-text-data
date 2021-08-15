@@ -34,6 +34,7 @@ Table of Contents
     * [sacred](#sacred)
     * [harrypotter](#harrypotter)
     * [hgwellsr](#hgwellsr)
+    * [jeeves](#jeeves)
     * [koanr](#koanr)
     * [rperseus](#rperseus)
     * [subtools](#subtools)
@@ -266,6 +267,19 @@ library(hgwellsr)
 
 ```{r}
 head(annveronica, 10)
+```
+
+### jeeves
+
+The **jeeves** package provides access to the full texts of 38 works by P.G. Wodehouse.
+
+```{r message=FALSE}
+#devtools::install_github("aniruhil/jeeves")
+library(jeeves)
+```
+
+```{r}
+glimpse(adamselindistress)
 ```
 
 ### koanr
