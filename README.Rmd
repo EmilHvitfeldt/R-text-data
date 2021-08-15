@@ -41,6 +41,7 @@ Table of Contents
     * [jeeves](#jeeves)
     * [koanr](#koanr)
     * [rperseus](#rperseus)
+    * [tidygutenbergr](#tidygutenbergr)
     * [subtools](#subtools)
   * [Wild data](#wild-data)
     * Cornell data
@@ -400,6 +401,23 @@ head(aeneid_latin)
 ```
 
 See [the vignette for more examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
+
+### tidygutenbergr
+
+The **tidygutenbergr** contains many functions that will fetch data from [Project Gutenberg](https://www.gutenberg.org/) using the **gutenbergr** package and do some light cleaning.
+
+```{r}
+#devtools::install_github("milHvitfeldt/tidygutenbergr")
+library(tidygutenbergr)
+```
+
+tidygutenbergr contains a couple dozen datasets that can all be found [here](https://emilhvitfeldt.github.io/tidygutenbergr/reference/index.html).
+
+Many books will have metadata on the text such as book nunmber and chapter name/number.
+
+```{r, message=FALSE}
+glimpse(a_tale_of_two_cities())
+```
 
 ### subtools
 

@@ -31,6 +31,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [jeeves](#jeeves)
     -   [koanr](#koanr)
     -   [rperseus](#rperseus)
+    -   [tidygutenbergr](#tidygutenbergr)
     -   [subtools](#subtools)
 -   [Wild data](#wild-data)
     -   Cornell data
@@ -679,6 +680,33 @@ head(aeneid_latin)
 
 See [the vignette for more
 examples.](https://ropensci.github.io/rperseus/articles/rperseus-vignette.html)
+
+### tidygutenbergr
+
+The **tidygutenbergr** contains many functions that will fetch data from
+[Project Gutenberg](https://www.gutenberg.org/) using the **gutenbergr**
+package and do some light cleaning.
+
+``` r
+#devtools::install_github("milHvitfeldt/tidygutenbergr")
+library(tidygutenbergr)
+```
+
+tidygutenbergr contains a couple dozen datasets that can all be found
+[here](https://emilhvitfeldt.github.io/tidygutenbergr/reference/index.html).
+
+Many books will have metadata on the text such as book nunmber and
+chapter name/number.
+
+``` r
+glimpse(a_tale_of_two_cities())
+#> Rows: 15,830
+#> Columns: 4
+#> $ text         <chr> "Book the First--Recalled to Life", "", "", "", "", "CHAP…
+#> $ book         <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+#> $ chapter      <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+#> $ chapter_name <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+```
 
 ### subtools
 
