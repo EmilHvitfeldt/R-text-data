@@ -33,6 +33,7 @@ Table of Contents
     * [text2vec](#text2vec)
     * [epubr](#epubr)
   * [Github packages](#github-packages)
+    * [appa](#appa)
     * [sacred](#sacred)
     * [harrypotter](#harrypotter)
     * [hgwellsr](#hgwellsr)
@@ -163,14 +164,14 @@ dplyr::glimpse(proust_books())
 
 ### schrute
 
-This **schrute** containscomplete script transcription for The Office (US) television show.
+This **schrute** contains complete script transcription for The Office (US) television show.
 
 ```{r}
 #install.packages("schrute")
 library(schrute)
 ```
 
-The data set includes the full transciption, line by line with metadata about episode number, season number, character, and more.
+The data set includes the full transcription, line by line with metadata about episode number, season number, character, and more.
 
 ```{r}
 glimpse(theoffice)
@@ -255,6 +256,21 @@ library(epubr)
 Further information and examples can be found [here](https://github.com/ropensci/epubr).
 
 ## Github packages
+
+### appa
+
+This **appa** contains complete script transcription for Avatar: The Last Airbender.
+
+```{r}
+#devtools::install_github("averyrobbins1/appa")
+library(appa)
+```
+
+The data set includes the full transcription, line by line with metadata about book number, chapter number, character, and more.
+
+```{r}
+dplyr::glimpse(appa)
+```
 
 ### sacred
 

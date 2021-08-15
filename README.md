@@ -23,6 +23,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [text2vec](#text2vec)
     -   [epubr](#epubr)
 -   [Github packages](#github-packages)
+    -   [appa](#appa)
     -   [sacred](#sacred)
     -   [harrypotter](#harrypotter)
     -   [hgwellsr](#hgwellsr)
@@ -249,7 +250,7 @@ dplyr::glimpse(proust_books())
 
 ### schrute
 
-This **schrute** containscomplete script transcription for The Office
+This **schrute** contains complete script transcription for The Office
 (US) television show.
 
 ``` r
@@ -257,7 +258,7 @@ This **schrute** containscomplete script transcription for The Office
 library(schrute)
 ```
 
-The data set includes the full transciption, line by line with metadata
+The data set includes the full transcription, line by line with metadata
 about episode number, season number, character, and more.
 
 ``` r
@@ -422,6 +423,37 @@ Further information and examples can be found
 [here](https://github.com/ropensci/epubr).
 
 ## Github packages
+
+### appa
+
+This **appa** contains complete script transcription for Avatar: The
+Last Airbender.
+
+``` r
+#devtools::install_github("averyrobbins1/appa")
+library(appa)
+```
+
+The data set includes the full transcription, line by line with metadata
+about book number, chapter number, character, and more.
+
+``` r
+dplyr::glimpse(appa)
+#> Rows: 13,385
+#> Columns: 12
+#> $ id                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1…
+#> $ book              <fct> Water, Water, Water, Water, Water, Water, Water, Wat…
+#> $ book_num          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+#> $ chapter           <fct> "The Boy in the Iceberg", "The Boy in the Iceberg", …
+#> $ chapter_num       <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+#> $ character         <chr> "Katara", "Scene Description", "Sokka", "Scene Descr…
+#> $ full_text         <chr> "Water. Earth. Fire. Air. My grandmother used to tel…
+#> $ character_words   <chr> "Water. Earth. Fire. Air. My grandmother used to tel…
+#> $ scene_description <list> <>, <>, "[Close-up of the boy as he grins confident…
+#> $ writer            <chr> "‎Michael Dante DiMartino, Bryan Konietzko, Aaron Eha…
+#> $ director          <chr> "Dave Filoni", "Dave Filoni", "Dave Filoni", "Dave F…
+#> $ imdb_rating       <dbl> 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.1, 8.…
+```
 
 ### sacred
 
