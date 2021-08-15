@@ -33,6 +33,7 @@ Table of Contents
   * [Github packages](#github-packages)
     * [sacred](#sacred)
     * [harrypotter](#harrypotter)
+    * [hgwellsr](#hgwellsr)
     * [koanr](#koanr)
     * [rperseus](#rperseus)
     * [subtools](#subtools)
@@ -246,6 +247,26 @@ Examples:
 
 - [Harry Plotter: Celebrating the 20 year anniversary with tidytext and the tidyverse in R](https://paulvanderlaken.com/2017/08/03/harry-plotter-celebrating-the-20-year-anniversary-with-tidytext-the-tidyverse-and-r/)
 - [Harry Plotter: Part 2 – Hogwarts Houses and their Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
+
+### hgwellsr
+
+The **hgwellsr** package provides access to the full texts of six novels by H. G. Wells.
+
+```{r}
+#devtools::install_github("erikhoward/hgwellsr")
+library(hgwellsr)
+```
+
++ Ann Veronica (1909): `annveronica`. 
++ The History of Mr Polly (1910): `mrpolly`.
++ The Invisible Man (1897): `invisibleman`.
++ The Island of Doctor Moreau (1896): `doctormoreau`.
++ The Time Machine (1895):`timemachine`.
++ The War of the Worlds (1898): `waroftheworlds`.
+
+```{r}
+head(annveronica, 10)
+```
 
 ### koanr
 

@@ -23,6 +23,7 @@ rather how to get a data set to get started with minimal hassle.
 -   [Github packages](#github-packages)
     -   [sacred](#sacred)
     -   [harrypotter](#harrypotter)
+    -   [hgwellsr](#hgwellsr)
     -   [koanr](#koanr)
     -   [rperseus](#rperseus)
     -   [subtools](#subtools)
@@ -387,6 +388,37 @@ Examples:
 -   [Harry Plotter: Part 2 – Hogwarts Houses and their
     Stereotypes](https://paulvanderlaken.com/2017/08/22/harry-plotter-part-2-hogwarts-houses-and-their-stereotypes/)
 
+### hgwellsr
+
+The **hgwellsr** package provides access to the full texts of six novels
+by H. G. Wells.
+
+``` r
+#devtools::install_github("erikhoward/hgwellsr")
+library(hgwellsr)
+```
+
+-   Ann Veronica (1909): `annveronica`.
+-   The History of Mr Polly (1910): `mrpolly`.
+-   The Invisible Man (1897): `invisibleman`.
+-   The Island of Doctor Moreau (1896): `doctormoreau`.
+-   The Time Machine (1895):`timemachine`.
+-   The War of the Worlds (1898): `waroftheworlds`.
+
+``` r
+head(annveronica, 10)
+#>  [1] "CHAPTER THE FIRST"                                                     
+#>  [2] ""                                                                      
+#>  [3] "ANN VERONICA TALKS TO HER FATHER"                                      
+#>  [4] ""                                                                      
+#>  [5] ""                                                                      
+#>  [6] "Part 1"                                                                
+#>  [7] ""                                                                      
+#>  [8] ""                                                                      
+#>  [9] "One Wednesday afternoon in late September, Ann Veronica Stanley came"  
+#> [10] "down from London in a state of solemn excitement and quite resolved to"
+```
+
 ### koanr
 
 The **koanr** package includes text from several of the more important
@@ -404,12 +436,12 @@ Equanimity(`book_of_equanimity`).
 
 ``` r
 dplyr::glimpse(gateless_gate)
-#> Observations: 192
-#> Variables: 4
-#> $ collection <chr> "The Gateless Gate", "The Gateless Gate", "The Gatele…
-#> $ case       <int> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5,…
-#> $ type       <chr> "title", "main_case", "commentary", "capping_verse", …
-#> $ text       <chr> "Joshu's Dog", "A monk asked Joshu, \"Has the dog the…
+#> Rows: 192
+#> Columns: 4
+#> $ collection <chr> "The Gateless Gate", "The Gateless Gate", "The Gateless Gat…
+#> $ case       <int> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5,…
+#> $ type       <chr> "title", "main_case", "commentary", "capping_verse", "title…
+#> $ text       <chr> "Joshu's Dog", "A monk asked Joshu, \"Has the dog the Buddh…
 ```
 
 ### rperseus
@@ -429,15 +461,15 @@ aeneid_latin <- perseus_catalog %>%
   pull(urn) %>% 
   get_perseus_text()
 head(aeneid_latin)
-#> # A tibble: 6 x 7
-#>   text         urn       group_name label description      language section
-#>   <chr>        <chr>     <chr>      <chr> <chr>            <chr>      <int>
-#> 1 Arma virumq… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            1
-#> 2 Conticuere … urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            2
-#> 3 Postquam re… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            3
-#> 4 At regina g… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            4
-#> 5 Interea med… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            5
-#> 6 Sic fatur l… urn:cts:… Virgil     Aene… "Perseus:bib:oc… lat            6
+#> # A tibble: 6 × 7
+#>   text           urn        group_name label description        language section
+#>   <chr>          <chr>      <chr>      <chr> <chr>              <chr>      <int>
+#> 1 Arma virumque… urn:cts:l… Virgil     Aene… "Perseus:bib:oclc… lat            1
+#> 2 Conticuere om… urn:cts:l… Virgil     Aene… "Perseus:bib:oclc… lat            2
+#> 3 Postquam res … urn:cts:l… Virgil     Aene… "Perseus:bib:oclc… lat            3
+#> 4 At regina gra… urn:cts:l… Virgil     Aene… "Perseus:bib:oclc… lat            4
+#> 5 Interea mediu… urn:cts:l… Virgil     Aene… "Perseus:bib:oclc… lat            5
+#> 6 Sic fatur lac… urn:cts:l… Virgil     Aene… "Perseus:bib:oclc… lat            6
 ```
 
 See [the vignette for more
@@ -499,12 +531,12 @@ data <- map_df(file_names,
                         html_tag = str_extract(.x, "(?<=cv\\d{3}_)\\d*")))
 
 glimpse(data)
-#> Observations: 64,720
-#> Variables: 4
-#> $ text     <chr> "plot : two teen couples go to a church party , drink a…
-#> $ polarity <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
-#> $ cv_tag   <chr> "000", "000", "000", "000", "000", "000", "000", "000",…
-#> $ html_tag <chr> "29416", "29416", "29416", "29416", "29416", "29416", "…
+#> Rows: 64,720
+#> Columns: 4
+#> $ text     <chr> "plot : two teen couples go to a church party , drink and the…
+#> $ polarity <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…
+#> $ cv_tag   <chr> "000", "000", "000", "000", "000", "000", "000", "000", "000"…
+#> $ html_tag <chr> "29416", "29416", "29416", "29416", "29416", "29416", "29416"…
 ```
 
 ### sentence polarity dataset v1.0
@@ -528,10 +560,10 @@ data <- map_df(file_names,
                         polarity = str_detect(.x, "pos")))
 
 glimpse(data)
-#> Observations: 10,662
-#> Variables: 2
-#> $ text     <chr> "simplistic , silly and tedious . ", "it's so laddish a…
-#> $ polarity <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+#> Rows: 10,662
+#> Columns: 2
+#> $ text     <chr> "simplistic , silly and tedious . ", "it's so laddish and juv…
+#> $ polarity <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…
 ```
 
 ### scale dataset v1.0
@@ -563,12 +595,12 @@ data <- map_df(seq_len(length(names)),
                         name = names[.x]))
 
 glimpse(data)
-#> Observations: 5,006
-#> Variables: 4
-#> $ text   <chr> "in my opinion , a movie reviewer's most important task i…
-#> $ id     <chr> "29420", "17219", "18406", "18648", "20021", "20454", "20…
-#> $ rating <chr> "0.1", "0.2", "0.2", "0.2", "0.2", "0.2", "0.2", "0.2", "…
-#> $ name   <chr> "Dennis Schwartz", "Dennis Schwartz", "Dennis Schwartz", …
+#> Rows: 5,006
+#> Columns: 4
+#> $ text   <chr> "in my opinion , a movie reviewer's most important task is to o…
+#> $ id     <chr> "29420", "17219", "18406", "18648", "20021", "20454", "20473", …
+#> $ rating <chr> "0.1", "0.2", "0.2", "0.2", "0.2", "0.2", "0.2", "0.2", "0.2", …
+#> $ name   <chr> "Dennis Schwartz", "Dennis Schwartz", "Dennis Schwartz", "Denni…
 ```
 
 ### subjectivity dataset v1.0
@@ -594,10 +626,10 @@ data <- map_df(file_names,
                                         "objective")))
 
 glimpse(data)
-#> Observations: 10,000
-#> Variables: 2
-#> $ text  <chr> "smart and alert , thirteen conversations about one thing …
-#> $ label <chr> "subjective", "subjective", "subjective", "subjective", "s…
+#> Rows: 10,000
+#> Columns: 2
+#> $ text  <chr> "smart and alert , thirteen conversations about one thing is a s…
+#> $ label <chr> "subjective", "subjective", "subjective", "subjective", "subject…
 ```
 
 ### SouthParkData
