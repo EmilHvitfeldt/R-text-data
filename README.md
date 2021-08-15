@@ -89,7 +89,7 @@ Examples:
 
 -   <https://juliasilge.com/blog/if-i-loved-nlp-less/>
 
-## quRan
+### quRan
 
 The **quRan** package contains the complete text of the Qur’an in Arabic
 (with and without vowels) and in English (the Yusuf Ali and Saheeh
@@ -129,7 +129,7 @@ Examples:
 [Twitter
 thread](https://twitter.com/andrewheiss/status/1078428352577327104)
 
-## scriptuRs
+### scriptuRs
 
 The **scriptuRs** package full text of the Standard Works for The Church
 of Jesus Christ of Latter-day Saints: the Old and New Testaments, the
