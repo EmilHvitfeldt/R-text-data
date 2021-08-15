@@ -25,6 +25,7 @@ Table of Contents
     * [janeaustenr](#janeaustenr)
     * [quRan](#quran)
     * [scriptuRs](#scripturs)
+    * [friends](#friends)
     * [hcandersenr](#hcandersenr)
     * [proustr](#proustr)
     * [schrute](#schrute)
@@ -111,6 +112,31 @@ dplyr::glimpse(scriptuRs::book_of_mormon)
 Examples:
 
 - [Tidy text, parts of speech, and unique words in the Bible](https://www.andrewheiss.com/blog/2018/12/26/tidytext-pos-john/)
+
+### friends
+
+The goal of **friends** to provide the complete script transcription of the [Friends](https://en.wikipedia.org/wiki/Friends) sitcom. The data originates from the [Character Mining](https://github.com/emorynlp/character-mining) repository which includes references to scientific explorations using this data. This package simply provides the data in tibble format instead of json files.
+
+```{r}
+#install.packages("friends")
+library(friends)
+```
+
+The data set includes the full transcription, line by line with metadata about episode number, season number, character, and more.
+
+```{r}
+dplyr::glimpse(friends)
+```
+
+Additionally data sets are included for more meta data.
+
+```{r}
+dplyr::glimpse(friends_emotions)
+
+dplyr::glimpse(friends_entities)
+
+dplyr::glimpse(friends_info)
+```
 
 ### hcandersenr
 
