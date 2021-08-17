@@ -40,6 +40,7 @@ The goal of this repository is to act as a collection of textual data set to be 
     -   [hgwellsr](#hgwellsr)
     -   [jeeves](#jeeves)
     -   [koanr](#koanr)
+    -   [sherlock](#sherlock)
     -   [rperseus](#rperseus)
     -   [tidygutenbergr](#tidygutenbergr)
     -   [subtools](#subtools)
@@ -382,6 +383,21 @@ The texts in this package include The Gateless Gate (`gateless_gate`), The Blue 
 
 ```{r}
 dplyr::glimpse(gateless_gate)
+```
+
+### sherlock
+
+The [sherlock](https://github.com/EmilHvitfeldt/sherlock) package includes text from the Sherlock Holmes Books.
+
+```{r message=FALSE}
+#devtools::install_github("EmilHvitfeldt/sherlock")
+library(sherlock)
+```
+
+The goal of sherlock is to provide access to the full texts of Sherlock Holmes stories that are in the public domain. Text and further information regarding copyright laws can be found [here](https://sherlock-holm.es/ascii/).
+
+```{r}
+dplyr::glimpse(holmes)
 ```
 
 ### rperseus

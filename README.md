@@ -30,6 +30,7 @@ rather how to get a data set to get started with minimal hassle.
     -   [hgwellsr](#hgwellsr)
     -   [jeeves](#jeeves)
     -   [koanr](#koanr)
+    -   [sherlock](#sherlock)
     -   [rperseus](#rperseus)
     -   [tidygutenbergr](#tidygutenbergr)
     -   [subtools](#subtools)
@@ -656,6 +657,29 @@ dplyr::glimpse(gateless_gate)
 #> $ case       <int> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5,…
 #> $ type       <chr> "title", "main_case", "commentary", "capping_verse", "title…
 #> $ text       <chr> "Joshu's Dog", "A monk asked Joshu, \"Has the dog the Buddh…
+```
+
+### sherlock
+
+The [sherlock](https://github.com/EmilHvitfeldt/sherlock) package
+includes text from the Sherlock Holmes Books.
+
+``` r
+#devtools::install_github("EmilHvitfeldt/sherlock")
+library(sherlock)
+```
+
+The goal of sherlock is to provide access to the full texts of Sherlock
+Holmes stories that are in the public domain. Text and further
+information regarding copyright laws can be found
+[here](https://sherlock-holm.es/ascii/).
+
+``` r
+dplyr::glimpse(holmes)
+#> Rows: 65,958
+#> Columns: 2
+#> $ text <chr> "A STUDY IN SCARLET", "", "Table of contents", "", "Part I", "Mr.…
+#> $ book <chr> "A Study In Scarlet", "A Study In Scarlet", "A Study In Scarlet",…
 ```
 
 ### rperseus
